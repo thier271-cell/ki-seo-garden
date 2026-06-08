@@ -52,6 +52,9 @@ jobs:
       - name: Build Quartz
         run: npx quartz build -v
 
+      - name: Inject full-page graph
+        run: node inject-fullgraph.mjs
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
