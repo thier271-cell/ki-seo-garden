@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO + GEO Agentur-Angebot – Pitch Deck</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b1120; color: #e2e8f0; line-height: 1.6; }
+
+  .container { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header { text-align: center; padding: 50px 0 30px; }
+  header h1 { font-size: 2.6rem; background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  header p { color: #94a3b8; font-size: 1.1rem; margin-top: 10px; }
+  .badge-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .badge-row span { background: #1e293b; border: 1px solid #334155; border-radius: 999px; padding: 4px 14px; font-size: .8rem; color: #94a3b8; }
+
+  /* Section Title */
+  .section-title { font-size: 1.8rem; text-align: center; margin: 56px 0 8px; }
+  .section-sub { text-align: center; color: #64748b; font-size: .95rem; margin-bottom: 28px; }
+
+  /* ========== PACKAGE CARDS ========== */
+  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
+  @media (max-width: 1024px) { .packages { grid-template-columns: 1fr; } }
+
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+  .card.featured { border-color: #60a5fa; box-shadow: 0 0 0 1px #60a5fa, 0 8px 32px rgba(96,165,250,.12); }
+
+  .card-head { padding: 24px 24px 16px; position: relative; }
+  .card.featured .card-head { background: linear-gradient(180deg, rgba(96,165,250,.06) 0%, transparent 100%); }
+  .card-head .tag { position: absolute; top: -10px; right: 20px; background: #60a5fa; color: #0f172a; font-weight: 700; font-size: .7rem; padding: 3px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; }
+  .card-head h2 { font-size: 1.5rem; }
+  .card-head .subtitle { color: #94a3b8; font-size: .85rem; }
+  .card-head .price-row { display: flex; align-items: baseline; gap: 6px; margin-top: 12px; }
+  .card-head .price-row .price { font-size: 2rem; font-weight: 800; }
+  .card-head .price-row .price small { font-size: .85rem; font-weight: 400; color: #64748b; }
+  .card-head .price-row .period { color: #64748b; font-size: .85rem; }
+
+  .card-body { padding: 0 24px 24px; flex: 1; display: flex; flex-direction: column; }
+
+  /* Timeline inside card */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+  .tl-week { border-left: 2px solid #334155; padding: 0 0 12px 16px; position: relative; }
+  .tl-week:last-child { padding-bottom: 0; }
+  .tl-week::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #475569; }
+  .tl-week.phase-active::before { background: #60a5fa; box-shadow: 0 0 8px rgba(96,165,250,.4); }
+  .tl-week .w-title { font-weight: 700; font-size: .85rem; color: #60a5fa; display: flex; align-items: center; gap: 6px; }
+  .tl-week .w-title .w-tag { background: #1e293b; border: 1px solid #334155; border-radius: 4px; padding: 0 6px; font-size: .65rem; color: #64748b; font-weight: 400; text-transform: uppercase; }
+  .tl-week ul { list-style: none; margin-top: 6px; }
+  .tl-week ul li { font-size: .82rem; padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; color: #cbd5e1; }
+  .tl-week ul li::before { content: "•"; color: #60a5fa; font-weight: 700; }
+  .tl-week .tl-tools { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+  .tl-week .tl-tools span { background: #0f172a; border-radius: 3px; padding: 1px 7px; font-size: .65rem; color: #94a3b8; }
+  .tl-week .tl-deliverable { margin-top: 6px; background: rgba(96,165,250,.08); border: 1px solid rgba(96,165,250,.15); border-radius: 6px; padding: 6px 10px; font-size: .78rem; color: #93c5fd; display: flex; align-items: center; gap: 6px; }
+  .tl-week .tl-deliverable::before { content: "📦"; }
+
+  /* Deliverables summary */
+  .deliverables { margin-top: 16px; background: #0f172a; border-radius: 10px; padding: 14px 16px; border: 1px solid #334155; }
+  .deliverables .d-title { font-size: .8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+  .deliverables .d-item { font-size: .82rem; padding: 3px 0; display: flex; align-items: center; gap: 6px; }
+  .deliverables .d-item::before { content: "📎"; }
+
+  /* Button */
+  .card-btn { display: block; text-align: center; padding: 12px; border-radius: 10px; font-weight: 700; font-size: .9rem; text-decoration: none; margin-top: 20px; transition: background .2s; border: none; cursor: default; }
+  .card-btn.bronze { background: #78350f; color: #fb923c; }
+  .card-btn.silber { background: #1e3a5f; color: #60a5fa; }
+  .card-btn.gold { background: #3b2f0a; color: #fbbf24; }
+
+  /* ========== TOOL-MATRIX ========== */
+  .matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .matrix-item { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 20px; }
+  .matrix-item .m-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .matrix-item h3 { font-size: 1rem; margin-bottom: 4px; }
+  .matrix-item .m-desc { font-size: .82rem; color: #94a3b8; margin-bottom: 10px; }
+  .matrix-item .m-use { background: #0f172a; border-radius: 6px; padding: 8px 12px; font-size: .78rem; border-left: 3px solid #60a5fa; color: #cbd5e1; }
+  .matrix-item .m-use strong { color: #60a5fa; }
+
+  /* ========== PROCESS OVERVIEW ========== */
+  .process-flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; margin: 24px 0 40px; }
+  .pf-step { background: #1e293b; border: 1px solid #334155; text-align: center; padding: 18px 16px; flex: 1; min-width: 150px; max-width: 200px; position: relative; }
+  .pf-step:first-child { border-radius: 12px 0 0 12px; }
+  .pf-step:last-child { border-radius: 0 12px 12px 0; }
+  .pf-step:not(:last-child)::after { content: '→'; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; color: #475569; z-index: 2; }
+  .pf-step .pf-num { width: 28px; height: 28px; border-radius: 50%; background: #334155; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: 800; font-size: .8rem; color: #60a5fa; }
+  .pf-step h4 { font-size: .9rem; }
+  .pf-step p { font-size: .75rem; color: #94a3b8; margin-top: 4px; }
+  @media (max-width: 768px) {
+    .pf-step { min-width: 120px; }
+    .pf-step:not(:last-child)::after { content: '↓'; right: 50%; top: auto; bottom: -18px; transform: none; }
+  }
+
+  /* ========== TOOL PIPELINE ========== */
+  .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+  .pipe-item { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 20px; }
+  .pipe-item h3 { font-size: .95rem; color: #60a5fa; margin-bottom: 6px; }
+  .pipe-item .pipe-flow { font-size: .82rem; color: #94a3b8; margin-bottom: 10px; }
+  .pipe-item .pipe-flow strong { color: #e2e8f0; }
+  .pipe-item .pipe-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .pipe-item .pipe-tags span { background: #0f172a; border: 1px solid #334155; border-radius: 99px; padding: 2px 10px; font-size: .7rem; color: #60a5fa; }
+
+  /* ========== REPORTING ========== */
+  .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 24px 0; }
+  .report-item { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 18px; text-align: center; }
+  .report-item .r-icon { font-size: 1.6rem; }
+  .report-item .r-label { font-size: .82rem; margin-top: 6px; color: #cbd5e1; }
+  .report-item .r-desc { font-size: .72rem; color: #64748b; margin-top: 2px; }
+
+  .footer-note { text-align: center; padding: 40px 0 50px; color: #475569; font-size: .82rem; }
+
+  /* Tool Costs */
+  .costs-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; border-radius: 12px; overflow: hidden; border: 1px solid #334155; }
+  .costs-table th { background: #0f172a; padding: 12px 16px; text-align: left; font-size: .8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid #334155; }
+  .costs-table td { padding: 11px 16px; font-size: .85rem; border-bottom: 1px solid #1e293b; background: #1e293b; }
+  .costs-table tr:last-child td { border-bottom: none; }
+  .costs-table td:first-child { font-weight: 600; }
+  .costs-table .free { color: #22c55e; font-weight: 600; }
+  .costs-table .paid { color: #fbbf24; }
+  .costs-table .total-row td { background: #0f172a; font-weight: 700; border-top: 2px solid #334155; }
+  .costs-table .pkg-col { text-align: center; }
+  .costs-table .pkg-col .yes { color: #22c55e; }
+  .costs-table .pkg-col .no { color: #475569; }
+  .costs-table .pkg-col .bronze-bg { background: rgba(251,146,60,.1); }
+  .costs-table .pkg-col .silber-bg { background: rgba(96,165,250,.1); }
+  .costs-table .pkg-col .gold-bg { background: rgba(251,191,36,.1); }
+
+  .cost-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0 32px; }
+  .cost-summary .c-card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 20px; text-align: center; }
+  .cost-summary .c-card h3 { font-size: 1rem; margin-bottom: 4px; }
+  .cost-summary .c-card .c-cost { font-size: 1.6rem; font-weight: 800; margin: 8px 0; }
+  .cost-summary .c-card .c-detail { font-size: .78rem; color: #64748b; }
+  .cost-summary .c-card .c-margin { font-size: .82rem; margin-top: 8px; padding: 6px 12px; border-radius: 6px; }
+  .cost-summary .c-card .c-margin.good { background: rgba(34,197,94,.1); color: #22c55e; }
+  .cost-summary .c-card .c-margin.warn { background: rgba(251,191,36,.1); color: #fbbf24; }
+  .cost-summary .c-card .c-margin.great { background: rgba(96,165,250,.1); color: #60a5fa; }
+  @media (max-width: 768px) { .cost-summary { grid-template-columns: 1fr; } }
+  .footer-note a { color: #60a5fa; text-decoration: none; }
+
+  /* Tab buttons for package detail view */
+  .pkg-tabs { display: flex; justify-content: center; gap: 8px; margin: 32px 0 24px; flex-wrap: wrap; }
+  .pkg-tab { padding: 10px 24px; border-radius: 999px; border: 1px solid #334155; background: #1e293b; color: #94a3b8; font-weight: 600; font-size: .9rem; cursor: pointer; transition: all .2s; }
+  .pkg-tab:hover { border-color: #60a5fa; color: #e2e8f0; }
+  .pkg-tab.active { background: #60a5fa; border-color: #60a5fa; color: #0f172a; }
+
+  .pkg-detail { display: none; }
+  .pkg-detail.active { display: block; }
+
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+  @media (max-width: 768px) { .detail-grid { grid-template-columns: 1fr; } }
+
+  .detail-card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 20px; }
+  .detail-card h3 { font-size: 1rem; color: #60a5fa; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .detail-card ul { list-style: none; }
+  .detail-card ul li { font-size: .85rem; padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; color: #cbd5e1; }
+  .detail-card ul li::before { content: "▸"; color: #475569; }
+  .detail-card ul li .hl { color: #fbbf24; }
+  .detail-card p { font-size: .85rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+
+<header style="padding:60px 0 40px;text-align:center;position:relative;">
+  <div style="display:inline-block;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);border-radius:999px;padding:5px 20px;font-size:.8rem;color:#60a5fa;margin-bottom:20px;">Agentur-internes Pitch Deck · Juni 2026</div>
+  <h1>Die Zukunft der Suche ist KI.<br>Bist du bereit für deine Kunden?</h1>
+  <p style="max-width:700px;margin:16px auto 0;">Wir packen <strong>10+ Jahre SEO-Expertise</strong>, sechs Profi-Tools (Ahrefs, Sistrix, Claude, Perplexity, SurferSEO, GSC) und KI-gestützte GEO-Optimierung in <strong>drei skalierbare Retainer-Pakete</strong>. Das Ergebnis für die Agentur: ein <strong>neues MRR-Standbein mit 66–89% Marge</strong>, pitchbar an unseren gesamten Kundenstamm – ab 590€/Monat.</p>
+  <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;">
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.8rem;color:#fbbf24;">🔍 Ahrefs</span>
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.8rem;color:#fbbf24;">📊 Sistrix</span>
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.8rem;color:#fbbf24;">🤖 Claude</span>
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.8rem;color:#fbbf24;">🌐 Perplexity</span>
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.8rem;color:#fbbf24;">📝 SurferSEO</span>
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.8rem;color:#fbbf24;">⚡ Google Search Console</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;margin:28px auto 0;">
+    <div><div style="font-size:1.6rem;font-weight:800;">3</div><div style="font-size:.75rem;color:#64748b;">Pakete</div></div>
+    <div><div style="font-size:1.6rem;font-weight:800;">6</div><div style="font-size:.75rem;color:#64748b;">Tools im Stack</div></div>
+    <div><div style="font-size:1.6rem;font-weight:800;">590–4.500€</div><div style="font-size:.75rem;color:#64748b;">MRR pro Kunde</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ====================================================================== -->
+  <!-- EXECUTIVE SUMMARY -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Executive Summary</h2>
+  <p class="section-sub">Alles auf einer Seite – der Pitch in 60 Sekunden</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:10px;">📦 Das Angebot</h3>
+      <div style="font-size:.84rem;color:#cbd5e1;line-height:1.9;">
+        <strong>3 Retainer-Pakete:</strong> Bronze 590€ · Silber 1.490€ · Gold 4.500€/Monat<br>
+        <strong>Leistung:</strong> SEO + GEO (KI-Suche) aus einer Hand<br>
+        <strong>6 Tools:</strong> Ahrefs, Sistrix, Claude, Perplexity, SurferSEO, GSC<br>
+        <strong>Ziel:</strong> Monatlich wiederkehrende Umsätze als neues Agentur-Standbein
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:10px;">💰 Der Business Case</h3>
+      <div style="font-size:.84rem;color:#cbd5e1;line-height:1.9;">
+        <strong>Tool-Invest:</strong> ~720€/Monat (Agentur-Lizenzen, Break-even mit 1 Kunden)<br>
+        <strong>Marge:</strong> 66–89% je nach Paket (390–4.000€ Marge/Monat)<br>
+        <strong>5 Kunden:</strong> ~6.940€ Marge/Monat = ~83.000€/Jahr<br>
+        <strong>Personal:</strong> 1–2 bestehende Mitarbeiter (~0,8 VZÄ) für 5–8 Kunden
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:10px;">🚀 Nächste Schritte</h3>
+      <div style="font-size:.84rem;color:#cbd5e1;line-height:2.2;">
+        <strong>1.</strong> 2–3 Pilotkunden aus Bestand auswählen<br>
+        <strong>2.</strong> Tool-Stack buchen (~720€/M)<br>
+        <strong>3.</strong> 3 Monate Prozess validieren<br>
+        <strong>4.</strong> Go/No-Go-Entscheidung → Rollout
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-bottom:20px;">
+    <span style="background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);border-radius:999px;padding:5px 20px;font-size:.8rem;color:#60a5fa;">Die folgenden Kapitel erklären jeden Aspekt im Detail – von der USP bis zum Glossar.</span>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- USP – WARUM WIR + SEO+GEO 2026 -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅰ. Warum SEO + KI (GEO) – und warum wir?</h2>
+  <p class="section-sub">2026 entscheidet nicht mehr nur der klassische SEO-Rank, sondern deine Position im Knowledge Graph</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">🧬</div>
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:6px;">10+ Jahre SEO-Expertise</h3>
+      <p style="font-size:.85rem;color:#94a3b8;">Wir kennen jede Google-Update-Welle, jeden Algorithmus-Dreh. Kein Experiment – geballte Erfahrung aus hunderten Projekten.</p>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">🤖</div>
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:6px;">KI-gestützte GEO-Optimierung</h3>
+      <p style="font-size:.85rem;color:#94a3b8;">Claude + Perplexity + SurferSEO – wir nutzen die modernsten KI-Tools, um Content, Entities und Schema-Markup datengetrieben zu perfektionieren.</p>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">💎</div>
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:6px;">Perfektionismus in der Umsetzung</h3>
+      <p style="font-size:.85rem;color:#94a3b8;">Kein Massen-Durchlauf. Jede Seite wird individuell geprüft, jedes Briefing handverlesen. Qualität vor Quantität – das sehen auch Suchmaschinen.</p>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">📡</div>
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:6px;">SEO + GEO = Sichtbarkeit 2.0</h3>
+      <p style="font-size:.85rem;color:#94a3b8;">Klassisches SEO bringt Rankings. GEO bringt den Knowledge Graph, Featured Snippets und KI-generierte Antworten. Erst beides zusammen macht dich 2026 unschlagbar.</p>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- ONBOARDING – MONAT 1 -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅱ. Onboarding – der erste Monat</h2>
+  <p class="section-sub">Unser strukturierter Onboarding-Prozess – 5–7 Werktage vom Kick-off bis zum Regelbetrieb</p>
+
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:24px 0 40px;">
+    <div style="flex:1;min-width:180px;max-width:220px;background:#1e293b;border:1px solid #334155;text-align:center;padding:20px 16px;border-radius:12px 0 0 12px;position:relative;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#334155;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:.8rem;color:#60a5fa;">0-1</div>
+      <h4 style="font-size:.9rem;">Fragebogen</h4>
+      <p style="font-size:.75rem;color:#94a3b8;margin-top:6px;">Kunde füllt vorab ein kurzes Briefing aus – Ziele, Zielgruppe, Keywords, Webseiten-Zugänge<br><span style="color:#64748b;font-size:.7rem;">⏱ Tag 1</span></p>
+    </div>
+    <div style="display:flex;align-items:center;color:#475569;font-size:1.2rem;">→</div>
+    <div style="flex:1;min-width:180px;max-width:220px;background:#1e293b;border:1px solid #334155;text-align:center;padding:20px 16px;position:relative;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#334155;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:.8rem;color:#60a5fa;">0-2</div>
+      <h4 style="font-size:.9rem;">Kick-off-Call</h4>
+      <p style="font-size:.75rem;color:#94a3b8;margin-top:6px;">30–60 Min · Fragebogen besprechen, Ziele priorisieren, KPIs festlegen, Timeline abstecken<br><span style="color:#64748b;font-size:.7rem;">⏱ Tag 2–3</span></p>
+    </div>
+    <div style="display:flex;align-items:center;color:#475569;font-size:1.2rem;">→</div>
+    <div style="flex:1;min-width:180px;max-width:220px;background:#1e293b;border:1px solid #334155;text-align:center;padding:20px 16px;position:relative;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#334155;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:.8rem;color:#60a5fa;">0-3</div>
+      <h4 style="font-size:.9rem;">Baseline-Audit</h4>
+      <p style="font-size:.75rem;color:#94a3b8;margin-top:6px;">Technik, Sichtbarkeit, Rankings, KG-Präsenz erfassen – Ist-Zustand dokumentieren<br><span style="color:#64748b;font-size:.7rem;">⏱ Tag 4–7</span></p>
+    </div>
+    <div style="display:flex;align-items:center;color:#475569;font-size:1.2rem;">→</div>
+    <div style="flex:1;min-width:180px;max-width:220px;background:#1e293b;border:1px solid #334155;text-align:center;padding:20px 16px;border-radius:0 12px 12px 0;position:relative;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#60a5fa;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:.8rem;color:#0f172a;">⒈</div>
+      <h4 style="font-size:.9rem;">Start Regelbetrieb</h4>
+      <p style="font-size:.75rem;color:#94a3b8;margin-top:6px;">Ab hier läuft der monatliche Zyklus:<br>Audit → Strategie → Optimierung → Report</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:-20px 0 32px;">
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.78rem;color:#94a3b8;">⏱ Onboarding: 5–7 Werktage · im Setup-Monat enthalten · erster Report nach 4 Wochen</span>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- 1. PAKETE ÜBERSICHT (Cards) -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅲ. Pakete &amp; Preise</h2>
+  <p class="section-sub">Monatliche Laufzeit · jeweils zzgl. MwSt.</p>
+
+  <div class="packages">
+
+    <!-- ===== BRONZE ===== -->
+    <div class="card">
+      <div class="card-head">
+        <h2>Bronze</h2>
+        <div class="subtitle">Entry – Erste Optimierungen &amp; GEO-Einstieg</div>
+        <div class="price-row">
+          <span class="price">590<small>€</small></span>
+          <span class="period">/ Monat</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="timeline">
+
+          <div class="tl-week phase-active">
+            <div class="w-title">Woche 1 · Audit <span class="w-tag">🔍 Analyse</span></div>
+            <ul>
+              <li>Ahrefs Site-Audit: Technische Fehler, Crawl-Budget, Backlink-Profil</li>
+              <li>Sistrix Sichtbarkeits-Check: aktueller Index + Top-50-Rankings</li>
+              <li>GSC Export: Klicks, Impressionen, CTR, Durchschnittsposition</li>
+              <li>Claude GEO-Check: Knowledge Graph Präsenz + erste Entity-Analyse</li>
+            </ul>
+            <div class="tl-tools"><span>Ahrefs</span><span>Sistrix</span><span>GSC</span><span>Claude</span></div>
+            <div class="tl-deliverable">Kurz-Audit (2–3 Seiten) mit TOP 5 Problemen</div>
+          </div>
+
+          <div class="tl-week phase-active">
+            <div class="w-title">Woche 2 · Optimierung <span class="w-tag">✏️ Umsetzung</span></div>
+            <ul>
+              <li>5 Keyword-Optimierungen: Meta-Titles, Descriptions, H1, Content-Anpassungen</li>
+              <li>Sistrix SERP-Feature-Check pro Keyword</li>
+              <li>Claude generiert pro Keyword einen Optimierungsvorschlag</li>
+              <li><strong>1× Schema Markup</strong> (Organization oder LocalBusiness) via JSON-LD implementiert</li>
+              <li>Umsetzung der Änderungen auf der Website</li>
+            </ul>
+            <div class="tl-tools"><span>Claude</span><span>Sistrix</span><span>Ahrefs</span></div>
+            <div class="tl-deliverable">5 optimierte Seiten + 1 Schema-Implementierung</div>
+          </div>
+
+          <div class="tl-week">
+            <div class="w-title">Woche 3 · Mid-Month Check <span class="w-tag">📡 Pulse</span></div>
+            <ul>
+              <li>Quick-Ranking-Pulse der 5 optimierten Keywords (Ahrefs)</li>
+              <li>GSC: Klicks &amp; Impressionen der letzten 14 Tage</li>
+              <li>Bei Abweichungen: 1 Quick-Fix (Meta-Anpassung, interner Link)</li>
+            </ul>
+            <div class="tl-tools"><span>Ahrefs</span><span>GSC</span></div>
+            <div class="tl-deliverable">1-Satz-Update per E-Mail</div>
+          </div>
+
+          <div class="tl-week">
+            <div class="w-title">Woche 4 · Monatsreport <span class="w-tag">📊 Final</span></div>
+            <ul>
+              <li>Sistrix: Sichtbarkeits-Trend vs. Vormonat</li>
+              <li>Ahrefs: Ranking-Positionen der optimierten Keywords</li>
+              <li>GSC: Performance-Vergleich (vorher/nachher)</li>
+              <li>Claude: 1-seitige Zusammenfassung + Maßnahmen für Folgemonat</li>
+            </ul>
+            <div class="tl-tools"><span>Sistrix</span><span>Ahrefs</span><span>GSC</span><span>Claude</span></div>
+            <div class="tl-deliverable">1-Seiten-Report als PDF</div>
+          </div>
+
+        </div>
+
+        <div class="deliverables">
+          <div class="d-title">Monatliche Deliverables</div>
+          <div class="d-item">Kurz-Audit (TOP 5 Probleme)</div>
+          <div class="d-item">5 optimierte Unterseiten + 1 Schema-Markup</div>
+          <div class="d-item">Mid-Month-Check per E-Mail</div>
+          <div class="d-item">1-Seiten-Reporting PDF</div>
+        </div>
+
+        <div style="margin-top:12px;padding:8px 0;border-top:1px solid #334155;font-size:.75rem;color:#64748b;display:flex;justify-content:space-between;">
+          <span>🧰 Tool-Einsatz: Ahrefs · Sistrix · Claude · GSC</span>
+          <span>~ 100–200€ Toolkosten</span>
+        </div>
+        <div class="card-btn bronze">Paket Bronze wählen</div>
+      </div>
+    </div>
+
+    <!-- ===== SILBER ===== -->
+    <div class="card featured">
+      <div class="card-head">
+        <div class="tag">Empfohlen</div>
+        <h2>Silber</h2>
+        <div class="subtitle">Growth – Strategische Tiefenoptimierung + KI-GEO</div>
+        <div class="price-row">
+          <span class="price">1.490<small>€</small></span>
+          <span class="period">/ Monat</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="timeline">
+
+          <div class="tl-week phase-active">
+            <div class="w-title">Woche 1 · Tiefen-Audit <span class="w-tag">🔍 Analyse</span></div>
+            <ul>
+              <li>Alles aus Bronze, erweitert:</li>
+              <li>Claude Entity-Extraktion: relevante Entitäten + Knowledge Graph Lücken</li>
+              <li>Sistrix Wettbewerbsanalyse: Sichtbarkeit &amp; SERP-Features der Top 3 Konkurrenten</li>
+              <li>Ahrefs Content-Gap: welche Keywords ranken Konkurrenten, wir nicht</li>
+              <li>Perplexity Deep-Research: Trends &amp; aktuelle Entwicklungen im Kunden-Thema</li>
+            </ul>
+            <div class="tl-tools"><span>Ahrefs</span><span>Sistrix</span><span>GSC</span><span>Claude</span><span>Perplexity</span></div>
+            <div class="tl-deliverable">Strategie-Dokument (8–10 Seiten) mit Lücken-Analyse</div>
+          </div>
+
+          <div class="tl-week phase-active">
+            <div class="w-title">Woche 2 · Content-Strategie <span class="w-tag">🧠 Planung</span></div>
+            <ul>
+              <li>15 Keywords priorisiert in 3 Tiers:</li>
+              <li><strong>Tier 1 (Top 5):</strong> Detail-Briefing via Claude – Ziel, Zielgruppe, LSI-Keywords, Schema-Vorschlag</li>
+              <li><strong>Tier 2 (Mitte 5):</strong> Standard-Briefing – Claude Batch-Generation, Fokus auf H2-Struktur</li>
+              <li><strong>Tier 3 (Basis 5):</strong> Kurz-Briefing – Ziel + 3 Kernpunkte, schnelle Umsetzung</li>
+              <li>SurferSEO NLP-Scoring: Tier 1 + 2 (Wortanzahl, Überschriften, LSI-Dichte)</li>
+              <li>Schema Markup Vorschläge (JSON-LD) für Entity-Typen</li>
+            </ul>
+            <div class="tl-tools"><span>Claude</span><span>SurferSEO</span><span>Ahrefs</span></div>
+            <div class="tl-deliverable">15 Content-Briefings gestaffelt (5 Detail / 5 Standard / 5 Basis) + Schema</div>
+          </div>
+
+          <div class="tl-week">
+            <div class="w-title">Woche 3 · Umsetzung <span class="w-tag">✏️ Optimierung</span></div>
+            <ul>
+              <li>OnPage-Anpassungen: Meta, H1-Struktur, interne Verlinkung</li>
+              <li>Schema Markup Implementierung (bis zu 5 Entity-Typen)</li>
+              <li>Claude: Content-Texte optimieren / umschreiben nach SurferSEO-Vorgaben</li>
+              <li>Ahrefs: Redirect-Mapping &amp; technische Fixes aus Site-Audit</li>
+            </ul>
+            <div class="tl-tools"><span>Claude</span><span>SurferSEO</span><span>Ahrefs</span><span>GSC</span></div>
+            <div class="tl-deliverable">15 optimierte Seiten + Schema-Implementierung</div>
+          </div>
+
+          <div class="tl-week">
+            <div class="w-title">Woche 4 · Reporting + Call <span class="w-tag">📊 Review</span></div>
+            <ul>
+              <li>Sistrix Sichtbarkeits-Index + SERP-Feature-Entwicklung</li>
+              <li>Ahrefs Ranking-Tracking (15 Keywords)</li>
+              <li>Claude erstellt Maßnahmenplan für nächsten Monat</li>
+              <li>KI-Sichtbarkeitsindex: KG-Entwicklung &amp; Entity-Rankings</li>
+              <li><strong>30 Min. Strategie-Call</strong> (Ergebnisse + nächste Schritte)</li>
+            </ul>
+            <div class="tl-tools"><span>Sistrix</span><span>Ahrefs</span><span>GSC</span><span>Claude</span></div>
+            <div class="tl-deliverable">Ausführlicher Monatsreport + Maßnahmenplan</div>
+          </div>
+
+        </div>
+
+        <div class="deliverables">
+          <div class="d-title">Monatliche Deliverables</div>
+          <div class="d-item">Strategie-Dokument mit Lücken-Analyse</div>
+          <div class="d-item">15 Content-Briefings + Schema-Vorlagen</div>
+          <div class="d-item">15 optimierte Unterseiten</div>
+          <div class="d-item">Ausführlicher Monatsreport inkl. KI-Sichtbarkeitsindex</div>
+          <div class="d-item">30 Min. Strategie-Call</div>
+        </div>
+
+        <div style="margin-top:12px;padding:8px 0;border-top:1px solid #334155;font-size:.75rem;color:#64748b;display:flex;justify-content:space-between;">
+          <span>🧰 Tool-Einsatz: Ahrefs · Sistrix · Claude · Perplexity · SurferSEO · GSC</span>
+          <span>~ 250–500€ Toolkosten</span>
+        </div>
+        <div class="card-btn silber">Paket Silber wählen</div>
+      </div>
+    </div>
+
+    <!-- ===== GOLD ===== -->
+    <div class="card">
+      <div class="card-head">
+        <h2>Gold</h2>
+        <div class="subtitle">Enterprise – Komplett-Service mit Content + GEO-PR</div>
+        <div class="price-row">
+          <span class="price">4.500<small>€</small></span>
+          <span class="period">/ Monat</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="timeline">
+
+          <div class="tl-week phase-active">
+            <div class="w-title">Woche 1 · 360°-Audit <span class="w-tag">🔍 Vollanalyse</span></div>
+            <ul>
+              <li>Alles aus Silber, zuzüglich:</li>
+              <li>Core Web Vitals Deep-Dive: LCP, INP, CLS mit Handlungsempfehlungen</li>
+              <li>GSC Logfile-Analyse: Crawl-Effizienz, Indexierungs-Probleme</li>
+              <li>Ahrefs: komplettes Backlink-Profil + toxische Links identifizieren</li>
+              <li>Claude: automatische Entity-Map des gesamten Website-Contents</li>
+              <li>Perplexity: Markt- &amp; Wettbewerbs-Trends für Content-Plan</li>
+            </ul>
+            <div class="tl-tools"><span>Ahrefs</span><span>Sistrix</span><span>GSC</span><span>Claude</span><span>Perplexity</span></div>
+            <div class="tl-deliverable">360°-Audit (15–20 Seiten) + Entity-Map</div>
+          </div>
+
+          <div class="tl-week phase-active">
+            <div class="w-title">Woche 2 · Content-Produktion <span class="w-tag">✍️ Erstellung</span></div>
+            <ul>
+              <li><strong>4 Artikel</strong> bei strategischem Longform-Content (2.000+ Wörter, Pillar Pages)</li>
+              <li><strong>6–8 Artikel</strong> bei kürzeren Blog-/Ratgeber-Formaten (800–1.200 Wörter)</li>
+              <li>Anzahl richtet sich nach Content-Gap-Größe aus Woche-1-Analyse</li>
+              <li>Pro Artikel: Claude erstellt → SurferSEO NLP-Check → Human-Feinschliff</li>
+              <li>Bestehende Content-Seiten: Überarbeitung nach SurferSEO-Vorgaben (bis zu 20 Seiten)</li>
+            </ul>
+            <div class="tl-tools"><span>Claude</span><span>SurferSEO</span><span>Ahrefs</span></div>
+            <div class="tl-deliverable">4–8 fertig optimierte Artikel zur Freigabe</div>
+          </div>
+
+          <div class="tl-week">
+            <div class="w-title">Woche 3 · GEO-PR + Technik <span class="w-tag">🌐 Sichtbarkeit</span></div>
+            <ul>
+              <li>Knowledge Graph Optimierung: Claude erstellt Wikidata/DBpedia-Vorschläge</li>
+              <li>GEO-PR: strukturierte Daten für Google-Knowledge-Panel</li>
+              <li>Wikipedia-Recherche: Relevanz prüfen, Quellen sammeln (Perplexity)</li>
+              <li>Technische SEO-Umsetzung: CWV-Fixes, Schema-Markup, Robots.txt, Sitemap</li>
+            </ul>
+            <div class="tl-tools"><span>Claude</span><span>Perplexity</span><span>GSC</span><span>Ahrefs</span></div>
+            <div class="tl-deliverable">GEO-PR Dokumentation + technische Umsetzungs-Doku</div>
+          </div>
+
+          <div class="tl-week">
+            <div class="w-title">Woche 4 · Reporting + Call <span class="w-tag">📊 Strategie</span></div>
+            <ul>
+              <li>Wöchentliche Kurz-Reports (KW 1–3 bereits geliefert)</li>
+              <li>Umfassender Monatsreport: Rankings, Sichtbarkeit, Traffic, KG-Wachstum</li>
+              <li>Ahrefs: Backlink-Wachstum &amp; neuer Domain-Rating</li>
+              <li>Claude: automatische Report-Zusammenfassung + KI-gestützte Prognose</li>
+              <li><strong>2h Strategie-Call</strong> (Ergebnisse, Roadmap, nächste Schritte)</li>
+            </ul>
+            <div class="tl-tools"><span>Sistrix</span><span>Ahrefs</span><span>GSC</span><span>Claude</span></div>
+            <div class="tl-deliverable">Wöchentliche + Monats-Report · 2h Call · Roadmap</div>
+          </div>
+
+        </div>
+
+        <div class="deliverables">
+          <div class="d-title">Monatliche Deliverables</div>
+          <div class="d-item">360°-Audit + Entity-Map (15–20 Seiten)</div>
+          <div class="d-item">4–8 neue KI-optimierte Artikel</div>
+          <div class="d-item">GEO-PR Optimierung (KG, Wikidata, Schema)</div>
+          <div class="d-item">Technisches SEO (CWV, Logfiles, Strukturierte Daten)</div>
+          <div class="d-item">Wöchentliche Reports + ausführlicher Monatsreport</div>
+          <div class="d-item">2h Strategie-Call + Roadmap</div>
+        </div>
+
+        <div style="margin-top:12px;padding:8px 0;border-top:1px solid #334155;font-size:.75rem;color:#64748b;display:flex;justify-content:space-between;">
+          <span>🧰 Tool-Einsatz: Alle 6 Tools (Vollauslastung)</span>
+          <span>~ 500–800€ Toolkosten</span>
+        </div>
+
+        <div class="card-btn gold">Paket Gold wählen</div>
+      </div>
+    </div>
+
+  </div><!-- /.packages -->
+
+
+  <!-- ====================================================================== -->
+  <!-- 2. DETAILLIERTER WORKFLOW (tabs) -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅳ. Prozess im Detail</h2>
+  <p class="section-sub">So läuft die Zusammenarbeit – monatlich wiederholend</p>
+
+  <div class="pkg-tabs">
+    <div class="pkg-tab active" data-pkg="overview">Übersicht</div>
+    <div class="pkg-tab" data-pkg="bronze-d">Bronze Ablauf</div>
+    <div class="pkg-tab" data-pkg="silber-d">Silber Ablauf</div>
+    <div class="pkg-tab" data-pkg="gold-d">Gold Ablauf</div>
+  </div>
+
+  <!-- Overview (default) -->
+  <div class="pkg-detail active" id="overview">
+
+    <div class="process-flow">
+      <div class="pf-step">
+        <div class="pf-num">1</div>
+        <h4>Audit</h4>
+        <p>Daten sammeln: Technik, Backlinks, Sichtbarkeit, GEO-Präsenz</p>
+      </div>
+      <div class="pf-step" style="border-color:#475569;border-style:dashed;min-width:60px;max-width:60px;padding:12px 6px;">
+        <div style="font-size:1rem;">✅</div>
+        <p style="font-size:.6rem;color:#64748b;">QA-Check</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">2</div>
+        <h4>Strategie</h4>
+        <p>Lücken analysieren, Entity-Map, Content-Plan, Wettbewerb</p>
+      </div>
+      <div class="pf-step" style="border-color:#475569;border-style:dashed;min-width:60px;max-width:60px;padding:12px 6px;">
+        <div style="font-size:1rem;">✅</div>
+        <p style="font-size:.6rem;color:#64748b;">QA-Check</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">3</div>
+        <h4>Optimierung</h4>
+        <p>OnPage, Content, Schema, CWV, GEO-PR, Technik</p>
+      </div>
+      <div class="pf-step" style="border-color:#475569;border-style:dashed;min-width:60px;max-width:60px;padding:12px 6px;">
+        <div style="font-size:1rem;">✅</div>
+        <p style="font-size:.6rem;color:#64748b;">QA-Check</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">4</div>
+        <h4>Report</h4>
+        <p>Rankings, Sichtbarkeit, KG-Wachstum, Maßnahmenplan</p>
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h3>🔍 Phase 1 – Audit</h3>
+        <ul>
+          <li>Ahrefs Site-Audit (Crawl-Budget, Fehler, Backlinks)</li>
+          <li>Sistrix Sichtbarkeitsabgleich + SERP-Features</li>
+          <li>GSC Performance-Daten (Klicks, Impressionen, CWV)</li>
+          <li>Claude GEO-Check + Entity-Scan</li>
+          <li class="hl">➜ Deliverable: Audit-Bericht mit TOP-Problemen</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>🧠 Phase 2 – Strategie</h3>
+        <ul>
+          <li>Claude Entity-Extraktion + KG-Lücken identifizieren</li>
+          <li>Ahrefs Content-Gap: was Konkurrenten besser machen</li>
+          <li>Sistrix Wettbewerbs-Sichtbarkeitsvergleich</li>
+          <li>Perplexity Trend-Research für Content-Ideen</li>
+          <li class="hl">➜ Deliverable: Strategie-Dokument + Content-Plan</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>✏️ Phase 3 – Optimierung</h3>
+        <ul>
+          <li>OnPage: Meta, H1, interne Verlinkung, Struktur</li>
+          <li>Claude Content-Briefings + Artikel-Generierung</li>
+          <li>SurferSEO NLP-Scoring + Keyword-Dichte</li>
+          <li>Schema Markup (JSON-LD), CWV-Fixes, Redirects</li>
+          <li>GEO-PR: Wikidata, DBpedia, Knowledge Panel</li>
+          <li class="hl">➜ Deliverable: Optimierte Seiten + Schema + Artikel</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <h3>📊 Phase 4 – Reporting</h3>
+        <ul>
+          <li>Sistrix Sichtbarkeits-Index (+ Trend-Linie)</li>
+          <li>Ahrefs Ranking-Tracking + Domain-Rating</li>
+          <li>GSC Performance-Vergleich (Vor-/Nachher)</li>
+          <li>Claude KI-Zusammenfassung + Maßnahmenplan</li>
+          <li>Optional: 30 Min – 2h Strategie-Call</li>
+          <li class="hl">➜ Deliverable: Report-PDF + Maßnahmen für Folgemonat</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tool pipeline -->
+    <h3 style="text-align:center;color:#94a3b8;font-size:1.1rem;margin:32px 0 16px;">Kunden-Feedback &amp; Freigaben</h3>
+    <table class="costs-table" style="margin-bottom:24px;">
+      <thead>
+        <tr><th>Phase</th><th>Kunden-Aktion</th><th>Frist</th><th>Bronze</th><th>Silber</th><th>Gold</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nach Audit</td>
+          <td>Audit-Bericht sichten und prios bestätigen</td>
+          <td>3 Werktage</td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Nach Strategie</td>
+          <td>Content-Briefings / Strategie freigeben</td>
+          <td>3 Werktage</td>
+          <td class="pkg-col"><span class="no">✗</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Nach Optimierung</td>
+          <td>Änderungen abnehmen / Artikel freigeben</td>
+          <td>5 Werktage</td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td>Nach Report</td>
+          <td>Call-Termin bestätigen, Maßnahmen diskutieren</td>
+          <td>–</td>
+          <td class="pkg-col"><span class="no">✗</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+          <td class="pkg-col"><span class="yes">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;color:#64748b;font-size:.8rem;margin:-10px 0 20px;">Bei ausbleibender Freigabe läuft der Prozess planmäßig weiter – keine Blockade durch Kundenverzögerung.</p>
+
+    <!-- Tool pipeline -->
+    <h3 style="text-align:center;color:#94a3b8;font-size:1.1rem;margin:32px 0 16px;">Tool-Pipelines pro Prozess</h3>
+    <div class="pipeline">
+      <div class="pipe-item">
+        <h3>SEO-Audit Pipeline</h3>
+        <div class="pipe-flow"><strong>Ahrefs</strong> exportiert CSV mit technischen Fehlern, Crawl-Daten &amp; Backlinks<br><strong>→ Sistrix</strong> liefert Sichtbarkeitsverlauf &amp; SERP-Feature-Liste<br><strong>→ GSC</strong> stellt Performance-Export &amp; CWV-Daten bereit<br><strong>→ Claude</strong> analysiert alle Quellen parallel und erstellt kommentierten Audit-Bericht</div>
+        <div class="pipe-tags"><span>Ahrefs</span><span>Sistrix</span><span>GSC</span><span>Claude</span></div>
+      </div>
+      <div class="pipe-item">
+        <h3>GEO / Knowledge Graph Pipeline</h3>
+        <div class="pipe-flow"><strong>Claude</strong> extrahiert Entities und identifiziert KG-Lücken aus dem Audit<br><strong>→ Perplexity</strong> recherchiert Wikidata, DBpedia &amp; Wikipedia-Relevanz<br><strong>→ Claude</strong> generiert Schema-Markup (JSON-LD) &amp; Wikidata-Einträge<br><strong>→ Ergebnis:</strong> KG-Optimierung ready zur Implementierung</div>
+        <div class="pipe-tags"><span>Claude</span><span>Perplexity</span></div>
+      </div>
+      <div class="pipe-item">
+        <h3>Content-Optimierung Pipeline</h3>
+        <div class="pipe-flow"><strong>Claude</strong> erstellt Briefing aus Keyword-Daten &amp; SERP-Analyse<br><strong>→ SurferSEO</strong> liefert NLP-Score, empfohlene Wortanzahl &amp; LSI-Keywords<br><strong>→ Claude</strong> generiert/optimiert Artikel auf Basis der NLP-Vorgaben<br><strong>→ Ahrefs</strong> prüft Keyword-Dichte &amp; Ranking-Potenzial als Final-Check</div>
+        <div class="pipe-tags"><span>Claude</span><span>SurferSEO</span><span>Ahrefs</span></div>
+      </div>
+      <div class="pipe-item">
+        <h3>Reporting Pipeline</h3>
+        <div class="pipe-flow"><strong>Sistrix</strong> exportiert Sichtbarkeits-Trend &amp; SERP-Features<br><strong>→ Ahrefs</strong> liefert Ranking-Daten &amp; Backlink-Wachstum<br><strong>→ GSC</strong> stellt Traffic, CTR &amp; CWV-Daten bereit<br><strong>→ Claude</strong> fusioniert alle Daten zu einer KI-generierten Zusammenfassung mit Maßnahmenplan</div>
+        <div class="pipe-tags"><span>Sistrix</span><span>Ahrefs</span><span>GSC</span><span>Claude</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bronze Detail -->
+  <div class="pkg-detail" id="bronze-d">
+    <div class="process-flow">
+      <div class="pf-step">
+        <div class="pf-num">1</div>
+        <h4>Woche 1</h4>
+        <p>Basis-Audit: Technik, Backlinks, Sichtbarkeit, KG-Check</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">2</div>
+        <h4>Woche 2</h4>
+        <p>5 Keywords optimieren (Meta, H1, Content)</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">3</div>
+        <h4>Woche 3</h4>
+        <p>Mid-Month-Pulse: Ranking-Check, Quick-Fix</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">4</div>
+        <h4>Woche 4</h4>
+        <p>Reporting: 1-Seiten-Report mit Maßnahmenplan</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:.88rem;">⏱ Ca. 10–14h Aufwand/Monat · Fokus auf schnelle Wins + monatliche Kontrolle</p>
+  </div>
+
+  <!-- Silber Detail -->
+  <div class="pkg-detail" id="silber-d">
+    <div class="process-flow">
+      <div class="pf-step">
+        <div class="pf-num">1</div>
+        <h4>Woche 1</h4>
+        <p>Tiefen-Audit + Entity-Scan + Wettbewerbsanalyse</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">2</div>
+        <h4>Woche 2</h4>
+        <p>15 Content-Briefings + Schema-Vorlagen</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">3</div>
+        <h4>Woche 3</h4>
+        <p>OnPage + Schema + Content-Optimierung</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">4</div>
+        <h4>Woche 4</h4>
+        <p>Report + 30 Min Call + Maßnahmenplan</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:.88rem;">⏱ Ca. 22–30h Aufwand/Monat · Fokus auf Strategie + GEO</p>
+  </div>
+
+  <!-- Gold Detail -->
+  <div class="pkg-detail" id="gold-d">
+    <div class="process-flow">
+      <div class="pf-step">
+        <div class="pf-num">1</div>
+        <h4>Woche 1</h4>
+        <p>360°-Audit: CWV, Logfiles, Entity-Map, Trends</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">2</div>
+        <h4>Woche 2</h4>
+        <p>4–8 Artikel produzieren + Bestand optimieren</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">3</div>
+        <h4>Woche 3</h4>
+        <p>GEO-PR + Technisches SEO + Schema</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-num">4</div>
+        <h4>Woche 4</h4>
+        <p>Wöch. Reports + Monatsreport + 2h Call</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:.88rem;">⏱ Ca. 45–60h Aufwand/Monat · Fokus auf Vollservice + Content</p>
+  </div>
+
+
+  <!-- ====================================================================== -->
+  <!-- 3. TOOL-STACK -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅴ. Tool-Stack im Einsatz</h2>
+  <p class="section-sub">Jedes Tool hat eine spezifische Rolle im Prozess</p>
+
+  <div class="matrix">
+    <div class="matrix-item">
+      <div class="m-icon">🔍</div>
+      <h3>Ahrefs</h3>
+      <div class="m-desc">Backlink-Analyse · Keyword-Recherche · Site-Audit · Content-Gap · Rank-Tracking</div>
+      <div class="m-use"><strong>Einsatz:</strong> Basis-Audit, Wettbewerbslücken, technische Fehler, Ranking-Verlauf</div>
+    </div>
+    <div class="matrix-item">
+      <div class="m-icon">📊</div>
+      <h3>Sistrix</h3>
+      <div class="m-desc">Sichtbarkeitsindex · OnPage-Analyse · SERP-Features · Keyword-Cluster</div>
+      <div class="m-use"><strong>Einsatz:</strong> Sichtbarkeits-Trends, SERP-Feature-Scouting, monatliches Reporting</div>
+    </div>
+    <div class="matrix-item">
+      <div class="m-icon">🤖</div>
+      <h3>Claude (KI)</h3>
+      <div class="m-desc">Entity-Extraktion · Content-Strategie · Schema-Generierung · GEO-Analyse · Report-Zusammenfassung</div>
+      <div class="m-use"><strong>Einsatz:</strong> Knowledge Graph, Content-Briefings, Artikel-Generierung, Prognosen</div>
+    </div>
+    <div class="matrix-item">
+      <div class="m-icon">🌐</div>
+      <h3>Perplexity</h3>
+      <div class="m-desc">Deep-Research · Quellenanalyse · Trend-Scouting · Fact-Checking</div>
+      <div class="m-use"><strong>Einsatz:</strong> Wettbewerbs-Recherche, Content-Ideen, GEO-PR (Wikipedia, DBpedia)</div>
+    </div>
+    <div class="matrix-item">
+      <div class="m-icon">📝</div>
+      <h3>SurferSEO</h3>
+      <div class="m-desc">Content-Optimierung · NLP-Analyse · OnPage-Scoring · Struktur-Vorgaben</div>
+      <div class="m-use"><strong>Einsatz:</strong> Content-Briefings, Artikel-Qualitätssicherung, NLP-Scoring</div>
+    </div>
+    <div class="matrix-item">
+      <div class="m-icon">⚡</div>
+      <h3>Google Search Console</h3>
+      <div class="m-desc">Performance-Daten · Core Web Vitals · Indexierung · Crawl-Statistiken</div>
+      <div class="m-use"><strong>Einsatz:</strong> Technisches SEO, CWV-Monitoring, Traffic-Analyse, Reporting</div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================================== -->
+  <!-- TOOL-KOSTEN -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅵ. Tool-Kosten &amp; Marge</h2>
+  <p class="section-sub">Die Tools werden über deine Agentur-Lizenzen abgedeckt und auf die Pakete umgelegt</p>
+
+  <table class="costs-table">
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>Plan (für Agentur)</th>
+        <th>Kosten / Monat</th>
+        <th class="pkg-col">Bronze</th>
+        <th class="pkg-col">Silber</th>
+        <th class="pkg-col">Gold</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🔍 Ahrefs</td>
+        <td>Standard / Advanced</td>
+        <td class="paid">ca. 250–500 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr>
+        <td>📊 Sistrix</td>
+        <td>Professional / Enterprise</td>
+        <td class="paid">ca. 200–350 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr>
+        <td>🤖 Claude (API)</td>
+        <td>API-Nutzung (Team-Account)</td>
+        <td class="paid">ca. 100–300 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr>
+        <td>🌐 Perplexity</td>
+        <td>Pro / Team</td>
+        <td class="paid">ca. 20–40 €</td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr>
+        <td>📝 SurferSEO</td>
+        <td>Advanced / Max</td>
+        <td class="paid">ca. 150–250 €</td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr>
+        <td>⚡ Google Search Console</td>
+        <td>Kostenlos</td>
+        <td class="free">0 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>Tool-Kosten pro Kunde</strong></td>
+        <td></td>
+        <td></td>
+        <td class="pkg-col"><strong>ca. 120–200 €</strong></td>
+        <td class="pkg-col"><strong>ca. 250–500 €</strong></td>
+        <td class="pkg-col"><strong>ca. 500–800 €</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="text-align:center;color:#64748b;font-size:.82rem;margin-top:-16px;">
+    * Die Tool-Lizenzkosten sind Agentur-Betriebskosten und werden auf alle Kunden umgelegt.<br>
+    * Pro Kunde entstehen dadurch anteilige Kosten (siehe Tabelle unten). Je mehr Kunden, desto geringer der Anteil pro Paket.
+  </p>
+
+  <!-- Marge pro Paket -->
+  <h3 style="text-align:center;color:#94a3b8;font-size:1.1rem;margin:36px 0 16px;">Paket-Marge (Einnahmen − Toolkosten)</h3>
+  <div class="cost-summary">
+    <div class="c-card">
+      <h3>🥉 Bronze</h3>
+      <div class="c-cost">590 €</div>
+      <div class="c-detail">Tool-Anteil: ca. 100–200 € (Light-Pläne)</div>
+      <div class="c-margin good">~ 390–490 € Marge / Monat (66–83%)</div>
+    </div>
+    <div class="c-card">
+      <h3>🥈 Silber</h3>
+      <div class="c-cost">1.490 €</div>
+      <div class="c-detail">Tool-Anteil: ca. 250–500 €</div>
+      <div class="c-margin good">~ 990–1.240 € Marge / Monat (66–83%)</div>
+    </div>
+    <div class="c-card">
+      <h3>🥇 Gold</h3>
+      <div class="c-cost">4.500 €</div>
+      <div class="c-detail">Tool-Anteil: ca. 500–800 €</div>
+      <div class="c-margin great">~ 3.700–4.000 € Marge / Monat (82–89%)</div>
+    </div>
+  </div>
+
+  <!-- Initial Tool-Investment -->
+  <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;margin:20px 0 28px;text-align:center;">
+    <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:10px;">💡 Initiales Tool-Investment (Agentur-Einstieg)</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;">
+      <div style="background:#0f172a;border-radius:8px;padding:10px;"><strong>Ahrefs</strong><br><span style="color:#fbbf24;">~250 €</span></div>
+      <div style="background:#0f172a;border-radius:8px;padding:10px;"><strong>Sistrix</strong><br><span style="color:#fbbf24;">~200 €</span></div>
+      <div style="background:#0f172a;border-radius:8px;padding:10px;"><strong>Claude API</strong><br><span style="color:#fbbf24;">~100 €</span></div>
+      <div style="background:#0f172a;border-radius:8px;padding:10px;"><strong>Perplexity</strong><br><span style="color:#fbbf24;">~20 €</span></div>
+      <div style="background:#0f172a;border-radius:8px;padding:10px;"><strong>SurferSEO</strong><br><span style="color:#fbbf24;">~150 €</span></div>
+      <div style="background:#0f172a;border-radius:8px;padding:10px;"><strong>Gesamt</strong><br><span style="color:#22c55e;font-size:1.1rem;font-weight:800;">~720 €/Monat</span></div>
+    </div>
+    <p style="font-size:.82rem;color:#64748b;margin-top:10px;">
+      <strong style="color:#22c55e;">Break-even mit 1 Kunden.</strong> Ein Gold-Kunde deckt den gesamten Stack und erwirtschaftet >3.700€ Marge. Bereits 1 Silber- + 1 Bronze-Kunde decken die Fixkosten.
+    </p>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- ZIELGRUPPEN + ROI-BENCHMARKS -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅶ. Zielgruppen &amp; ROI</h2>
+  <p class="section-sub">Nicht jedes Paket passt zu jedem Website-Typ – unsere Empfehlung</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#fb923c;margin-bottom:4px;">🥉 Bronze – Ideal für</h3>
+      <ul style="list-style:none;font-size:.85rem;color:#cbd5e1;">
+        <li style="padding:3px 0;">▸ Lokale KMU (Handwerker, Ärzte, Anwälte)</li>
+        <li style="padding:3px 0;">▸ Kleine Nischen-Websites</li>
+        <li style="padding:3px 0;">▸ Startups mit begrenztem Budget</li>
+        <li style="padding:3px 0;">▸ Bis zu 20 Unterseiten</li>
+      </ul>
+      <div style="margin-top:12px;background:#0f172a;border-radius:8px;padding:10px;font-size:.82rem;text-align:center;">
+        <strong style="color:#22c55e;">Typisches Ergebnis nach 3 Monaten</strong><br>
+        <span style="color:#94a3b8;">+15–25% organische Sichtbarkeit</span>
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #60a5fa;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:4px;">🥈 Silber – Ideal für</h3>
+      <ul style="list-style:none;font-size:.85rem;color:#cbd5e1;">
+        <li style="padding:3px 0;">▸ Mittelständische Unternehmen</li>
+        <li style="padding:3px 0;">▸ E-Commerce (bis 500 Produkte)</li>
+        <li style="padding:3px 0;">▸ B2B-Dienstleister mit Content-Marketing</li>
+        <li style="padding:3px 0;">▸ 20–200 Unterseiten</li>
+      </ul>
+      <div style="margin-top:12px;background:#0f172a;border-radius:8px;padding:10px;font-size:.82rem;text-align:center;">
+        <strong style="color:#22c55e;">Typisches Ergebnis nach 3 Monaten</strong><br>
+        <span style="color:#94a3b8;">+30–50% organischer Traffic · +5–10 Featured Snippets<br><small style="color:#475569;">Abhängig von Content-Tiefe und Branche</small></span>
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#fbbf24;margin-bottom:4px;">🥇 Gold – Ideal für</h3>
+      <ul style="list-style:none;font-size:.85rem;color:#cbd5e1;">
+        <li style="padding:3px 0;">▸ Große E-Commerce-Plattformen</li>
+        <li style="padding:3px 0;">▸ Marken mit Knowledge-Graph-Präsenz</li>
+        <li style="padding:3px 0;">▸ Verlage / Content-Heavy Websites</li>
+        <li style="padding:3px 0;">▸ 200+ Unterseiten</li>
+      </ul>
+      <div style="margin-top:12px;background:#0f172a;border-radius:8px;padding:10px;font-size:.82rem;text-align:center;">
+        <strong style="color:#22c55e;">Typisches Ergebnis nach 3 Monaten</strong><br>
+        <span style="color:#94a3b8;">+40–70% Traffic · KG-Optimierung eingeleitet · +15–25 SERP-Features<br><small style="color:#475569;">Knowledge Panel-Entfaltung i.d.R. 4–6 Monate</small></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- GEO-GLOSSAR -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅷ. Was ist GEO?</h2>
+  <p class="section-sub">Generative Engine Optimization – das SEO für die KI-Ära</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;">
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:8px;">Klassisches SEO</h3>
+      <p style="font-size:.85rem;color:#94a3b8;margin-bottom:12px;">Optimiert Rankings in den 10 blauen Links. Arbeitet mit Keywords, Backlinks und technischen Faktoren.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;">
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#64748b;">Keywords</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#64748b;">Meta-Tags</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#64748b;">Backlinks</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#64748b;">CWV</span>
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #60a5fa;border-radius:14px;padding:24px;">
+      <h3 style="font-size:1rem;color:#a78bfa;margin-bottom:8px;">GEO (Generative Engine Optimization)</h3>
+      <p style="font-size:.85rem;color:#94a3b8;margin-bottom:12px;">Optimiert die Präsenz in KI-generierten Antworten (SGE, ChatGPT, Perplexity), im Knowledge Graph und in Featured Snippets.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;">
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#a78bfa;">Entities</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#a78bfa;">Schema Markup</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#a78bfa;">Knowledge Graph</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#a78bfa;">KG-Panel</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#a78bfa;">Featured Snippets</span>
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;">
+      <h3 style="font-size:1rem;color:#f472b6;margin-bottom:8px;">Unser Ansatz: SEO × GEO</h3>
+      <p style="font-size:.85rem;color:#94a3b8;margin-bottom:12px;">Wir verbinden beides: Klassische SEO-Daten aus Ahrefs/Sistrix fließen in KI-gestützte GEO-Strategien. Das Ergebnis: Sichtbarkeit in <em>allen</em> Google-Oberflächen.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;">
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#f472b6;">SEO-Daten</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#f472b6;">KI-Analyse</span>
+        <span style="background:#0f172a;border-radius:4px;padding:2px 8px;font-size:.7rem;color:#f472b6;">360°-Sichtbarkeit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- REPORTING-MOCKUP -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅸ. So sieht dein Monatsreport aus</h2>
+  <p class="section-sub">Einblick in das Reporting-Dashboard (Silber/Gold – Bronze als 1-Seiter)</p>
+
+  <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px 20px;margin:24px 0;">
+    <!-- Mockup Header -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px;">
+      <div>
+        <div style="font-weight:700;font-size:1.1rem;">📊 Monatsreport – Juni 2026</div>
+        <div style="font-size:.78rem;color:#64748b;">Kunde: Beispiel AG · Paket: Silber</div>
+      </div>
+      <div style="font-size:.75rem;color:#64748b;">Erstellt mit: Claude KI + Sistrix + Ahrefs + GSC</div>
+    </div>
+    <!-- KPI Row -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px;">
+      <div style="background:#0f172a;border-radius:10px;padding:14px;text-align:center;">
+        <div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Sichtbarkeit</div>
+        <div style="font-size:1.4rem;font-weight:800;color:#22c55e;">+18%</div>
+        <div style="font-size:.7rem;color:#22c55e;">vs. Vormonat</div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:14px;text-align:center;">
+        <div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Org. Traffic</div>
+        <div style="font-size:1.4rem;font-weight:800;color:#22c55e;">+24%</div>
+        <div style="font-size:.7rem;color:#22c55e;">vs. Vormonat</div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:14px;text-align:center;">
+        <div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Keywords Top 10</div>
+        <div style="font-size:1.4rem;font-weight:800;">47</div>
+        <div style="font-size:.7rem;color:#22c55e;">+8 neu</div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:14px;text-align:center;">
+        <div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">SERP-Features</div>
+        <div style="font-size:1.4rem;font-weight:800;">12</div>
+        <div style="font-size:.7rem;color:#22c55e;">+3 neu</div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:14px;text-align:center;">
+        <div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">KG-Wachstum</div>
+        <div style="font-size:1.4rem;font-weight:800;color:#a78bfa;">+5</div>
+        <div style="font-size:.7rem;color:#a78bfa;">Entities</div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:14px;text-align:center;">
+        <div style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">CWV Score</div>
+        <div style="font-size:1.4rem;font-weight:800;color:#22c55e;">🟢 Gut</div>
+        <div style="font-size:.7rem;color:#64748b;">LCP 1.8s · INP 120ms</div>
+      </div>
+    </div>
+    <!-- Maßnahmen -->
+    <div style="background:#0f172a;border-radius:10px;padding:16px;">
+      <div style="font-size:.8rem;font-weight:700;color:#60a5fa;margin-bottom:8px;">🎯 Empfohlene Maßnahmen für Juli (Claude-KI-generiert)</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
+        <div style="font-size:.82rem;color:#cbd5e1;display:flex;gap:8px;"><span style="color:#fbbf24;">▶</span> Content-Gap bei "nachhaltige Verpackung" schließen – Briefing liegt bei</div>
+        <div style="font-size:.82rem;color:#cbd5e1;display:flex;gap:8px;"><span style="color:#fbbf24;">▶</span> Schema Organization + LocalBusiness implementieren</div>
+        <div style="font-size:.82rem;color:#cbd5e1;display:flex;gap:8px;"><span style="color:#fbbf24;">▶</span> Backlink von Branchenverband anfragen (Kontakt recherchiert)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- ADD-ONS -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅹ. Add-ons &amp; Upsells</h2>
+  <p class="section-sub">Flexible Zusatzleistungen – einzeln buchbar</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:6px;">⚡</div>
+      <h4 style="font-size:.9rem;">Einmal-Audit</h4>
+      <p style="font-size:.8rem;color:#94a3b8;">Tiefen-Check ohne Folgevertrag. Ideal für Kunden, die erst testen wollen.</p>
+      <div style="margin-top:8px;font-weight:700;font-size:1.1rem;color:#60a5fa;">ab 1.200 €</div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:6px;">🚀</div>
+      <h4 style="font-size:.9rem;">Express-Optimierung</h4>
+      <p style="font-size:.8rem;color:#94a3b8;">5 Keywords in 48h optimiert. Für akute Ranking-Einbrüche oder Launch-Termine.</p>
+      <div style="margin-top:8px;font-weight:700;font-size:1.1rem;color:#60a5fa;">ab 490 €</div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:6px;">🎓</div>
+      <h4 style="font-size:.9rem;">Team-Schulung</h4>
+      <p style="font-size:.8rem;color:#94a3b8;">SEO- &amp; GEO-Workshop für das Kunden-Team. Grundlagen + Tool-Nutzung.</p>
+      <div style="margin-top:8px;font-weight:700;font-size:1.1rem;color:#60a5fa;">ab 1.500 €</div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:6px;">🌍</div>
+      <h4 style="font-size:.9rem;">International SEO</h4>
+      <p style="font-size:.8rem;color:#94a3b8;">Hreflang, mehrsprachige GEO-Strategie, Länder-Domains.</p>
+      <div style="margin-top:8px;font-weight:700;font-size:1.1rem;color:#60a5fa;">+50% Paketpreis</div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- VERTRAGSLAUFZEITEN -->
+  <!-- ====================================================================== -->
+  <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:24px 0 40px;">
+    <div style="flex:1;min-width:260px;background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;text-align:center;">
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:8px;">Vertragslaufzeiten</h3>
+      <div style="font-size:.85rem;color:#cbd5e1;line-height:1.8;">
+        Mindestlaufzeit: <strong>3 Monate</strong><br>
+        Kündigungsfrist: <strong>1 Monat</strong> zum Monatsende<br>
+        Setup: <strong>Einmalige Pauschale</strong> (500€ Bronze / 1.000€ Silber / 1.500€ Gold) – erster Retainer-Monat zum vollen Preis
+      </div>
+    </div>
+    <div style="flex:1;min-width:260px;background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;text-align:center;">
+      <h3 style="font-size:1rem;color:#60a5fa;margin-bottom:8px;">Dein Agentur-Vorteil</h3>
+      <div style="font-size:.85rem;color:#cbd5e1;line-height:1.8;">
+        📐 Tools als Agentur-Lizenz (Umlage auf Kunden)<br>
+        👥 Bestehender Kundenstamm = direkter Pitch<br>
+        🔄 Monatlich wiederkehrende Umsätze (MRR)<br>
+        📈 Skalierbar: Mit jedem Gold-Kunden wächst der Pool
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- 4. REPORTING -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅺ. Monatliches Reporting</h2>
+  <p class="section-sub">Was der Kunde am Ende des Monats bekommt</p>
+
+  <div class="report-grid">
+    <div class="report-item">
+      <div class="r-icon">📈</div>
+      <div class="r-label">Ranking-Entwicklung</div>
+      <div class="r-desc">Positionen aller optimierten Keywords</div>
+    </div>
+    <div class="report-item">
+      <div class="r-icon">👁️</div>
+      <div class="r-label">Sichtbarkeits-Index</div>
+      <div class="r-desc">Sistrix-Index vs. Vormonat</div>
+    </div>
+    <div class="report-item">
+      <div class="r-icon">🔗</div>
+      <div class="r-label">Backlink-Profil</div>
+      <div class="r-desc">Neue/verlorene Links, Domain-Rating</div>
+    </div>
+    <div class="report-item">
+      <div class="r-icon">🧠</div>
+      <div class="r-label">GEO / KG-Entwicklung</div>
+      <div class="r-desc">Knowledge Graph + Entity-Wachstum</div>
+    </div>
+    <div class="report-item">
+      <div class="r-icon">⚡</div>
+      <div class="r-label">Core Web Vitals</div>
+      <div class="r-desc">LCP, INP, CLS – Ampeln</div>
+    </div>
+    <div class="report-item">
+      <div class="r-icon">📄</div>
+      <div class="r-label">Content-Übersicht</div>
+      <div class="r-desc">Neue/optimierte Seiten</div>
+    </div>
+    <div class="report-item">
+      <div class="r-icon">🎯</div>
+      <div class="r-label">Maßnahmenplan</div>
+      <div class="r-desc">Nächste Schritte + Prioritäten</div>
+    </div>
+  </div>
+
+
+  <!-- ====================================================================== -->
+  <!-- FAQ -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">Ⅻ. Häufige Fragen – und unsere Antworten</h2>
+  <p class="section-sub">Die Einwände, die im Team kommen könnten – vorbereitet entkräftet</p>
+
+  <div style="display:flex;flex-direction:column;gap:12px;margin:24px 0;">
+    <details open style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px 20px;">
+      <summary style="font-weight:700;font-size:.95rem;cursor:pointer;color:#e2e8f0;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+        „Ist das nicht zu teuer für unsere kleinen Kunden?“
+        <span style="font-size:.8rem;color:#60a5fa;">▾</span>
+      </summary>
+      <p style="font-size:.88rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px solid #334155;">Genau dafür gibt's <strong style="color:#fb923c;">Bronze für 590€</strong>. Ein lokaler Handwerker oder Anwalt zahlt das aus der Portokasse – und bekommt trotzdem professionelles SEO + erste GEO-Signale. Unter 500€/Monat SEO-Betreuung findet man am Markt kaum, und dann ohne KI-Komponente.</p>
+    </details>
+
+    <details open style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px 20px;">
+      <summary style="font-weight:700;font-size:.95rem;cursor:pointer;color:#e2e8f0;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+        „Brauchen wir dafür nicht mehr Personal?“
+        <span style="font-size:.8rem;color:#60a5fa;">▾</span>
+      </summary>
+      <p style="font-size:.88rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px solid #334155;">Nein – im Gegenteil. Die <strong style="color:#60a5fa;">KI-Tools (Claude + Perplexity)</strong> automatisieren genau die zeitfressenden Teile: Recherche, Content-Entwürfe, Report-Zusammenfassungen. Bronze = 6–8h/Monat, Silber = 16–20h, Gold = 35–45h. Das ist mit <strong style="color:#22c55e;">1–2 bestehenden Mitarbeitern</strong> für 5–8 Kunden machbar.</p>
+    </details>
+
+    <details open style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px 20px;">
+      <summary style="font-weight:700;font-size:.95rem;cursor:pointer;color:#e2e8f0;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+        „Was ist, wenn Google wieder ein Update raushaut?“
+        <span style="font-size:.8rem;color:#60a5fa;">▾</span>
+      </summary>
+      <p style="font-size:.88rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px solid #334155;">Genau unser USP: <strong style="color:#60a5fa;">10+ Jahre SEO-Erfahrung</strong>. Wir haben Panda, Penguin, Hummingbird, BERT, Helpful Content und alle Core Updates durch. Wir erkennen Muster schneller als andere – und mit Ahrefs/Sistrix sehen wir Einbrüche sofort. Bei bedrohlichen Updates gibt's einen <strong style="color:#fbbf24;">kostenlosen Express-Check</strong> obendrauf.</p>
+    </details>
+
+    <details open style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px 20px;">
+      <summary style="font-weight:700;font-size:.95rem;cursor:pointer;color:#e2e8f0;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+        „SEO dauert doch Monate – wie verkaufen wir das?“
+        <span style="font-size:.8rem;color:#60a5fa;">▾</span>
+      </summary>
+      <p style="font-size:.88rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px solid #334155;">Mit der <strong style="color:#22c55e;">3-Monats-Garantie</strong> aus unserem Onboarding: Erste messbare Erfolge (Ranking-Verbesserungen, CTR-Steigerung, neue SERP-Features) innerhalb der Mindestlaufzeit. Unser Versprechen: Sollten nach 3 Monaten keine positiven KPIs vorliegen, analysieren wir kostenfrei die Ursachen und passen die Strategie an. Ein Google Core Update in diesem Zeitraum wird selbstverständlich berücksichtigt und nicht als ausbleibender Erfolg gewertet.</p>
+    </details>
+
+    <details open style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px 20px;">
+      <summary style="font-weight:700;font-size:.95rem;cursor:pointer;color:#e2e8f0;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+        „Und wenn ein Kunde nach 1 Monat wieder raus will?“
+        <span style="font-size:.8rem;color:#60a5fa;">▾</span>
+      </summary>
+       <p style="font-size:.88rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px solid #334155;">Deshalb die <strong style="color:#60a5fa;">3-Monate-Mindestlaufzeit</strong> im Vertrag. Das ist Branchenstandard und fair – SEO braucht Zeit. Das Onboarding startet mit einer einmaligen Setup-Pauschale, danach läuft der monatliche Regelbetrieb. Nach 3 Monaten sieht der Kunde den Wert und bleibt (Erfahrung: Retention >80% bei SEO-Retainern).</p>
+    </details>
+
+    <details open style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px 20px;">
+      <summary style="font-weight:700;font-size:.95rem;cursor:pointer;color:#e2e8f0;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+        „Machen das nicht schon andere Agenturen?“
+        <span style="font-size:.8rem;color:#60a5fa;">▾</span>
+      </summary>
+      <p style="font-size:.88rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px solid #334155;">Die meisten Agenturen machen <strong style="color:#fbbf24;">entweder</strong> SEO <strong style="color:#fbbf24;">oder</strong> experimentieren mit KI-Content. Kaum jemand kombiniert beides systematisch in einem Tool-Stack mit messbaren GEO-KPIs. Unser Ansatz: <strong style="color:#a78bfa;">SEO-Daten aus Ahrefs/Sistrix + KI-Analyse aus Claude/Perplexity = 360°-Sichtbarkeit</strong>. Das ist 2026 noch ein klarer Wettbewerbsvorteil.</p>
+    </details>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- BEISPIELRECHNUNG -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">XIII. Was bringt das der Agentur konkret?</h2>
+  <p class="section-sub">Beispielrechnung: 5 Kunden im ersten Halbjahr</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">Kunden-Mix (5 Kunden)</h3>
+      <div style="font-size:.88rem;color:#cbd5e1;line-height:2;">
+        1× Gold<br>
+        2× Silber<br>
+        2× Bronze
+      </div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">Monatlicher Umsatz</h3>
+      <div style="font-size:.88rem;color:#cbd5e1;line-height:2;">
+        Gold: 4.500€<br>
+        Silber: 2 × 1.490€ = 2.980€<br>
+        Bronze: 2 × 590€ = 1.180€
+      </div>
+      <div style="margin-top:8px;font-size:1.3rem;font-weight:800;color:#22c55e;">= 8.660€ MRR</div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">Tool-Kosten</h3>
+      <div style="font-size:.88rem;color:#cbd5e1;line-height:2;">
+        Gold: ~650€<br>
+        Silber: 2 × ~375€ = 750€<br>
+        Bronze: 2 × ~160€ = 320€
+      </div>
+      <div style="margin-top:8px;font-size:1.3rem;font-weight:800;color:#fbbf24;">= 1.720€</div>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">Arbeitsaufwand</h3>
+      <div style="font-size:.88rem;color:#cbd5e1;line-height:2;">
+        Gold: ~55h<br>
+        Silber: 2 × ~26h = 52h<br>
+        Bronze: 2 × ~12h = 24h
+      </div>
+      <div style="margin-top:8px;font-size:1.3rem;font-weight:800;color:#94a3b8;">= 131h</div>
+    </div>
+  </div>
+
+  <!-- Große Zahlen-Box -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0 32px;">
+    <div style="background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:14px;padding:20px;text-align:center;">
+      <div style="font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Netto-Marge / Monat</div>
+      <div style="font-size:2rem;font-weight:800;color:#22c55e;">6.940€</div>
+      <div style="font-size:.78rem;color:#64748b;">8.660€ − 1.720€</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:14px;padding:20px;text-align:center;">
+      <div style="font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Effektiver Stundensatz</div>
+      <div style="font-size:2rem;font-weight:800;color:#60a5fa;">53€</div>
+      <div style="font-size:.78rem;color:#64748b;">6.940€ ÷ 131h</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:14px;padding:20px;text-align:center;">
+      <div style="font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Jahres-Marge</div>
+      <div style="font-size:2rem;font-weight:800;color:#a78bfa;">~83.000€</div>
+      <div style="font-size:.78rem;color:#64748b;">12 × 6.940€</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:14px;padding:20px;text-align:center;">
+      <div style="font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;">Personalbedarf</div>
+      <div style="font-size:2rem;font-weight:800;color:#f472b6;">1–2 MA</div>
+      <div style="font-size:.78rem;color:#64748b;">131h = ~0,8 VZÄ</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-bottom:16px;">
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:5px 18px;font-size:.8rem;color:#94a3b8;">💡 <strong style="color:#e2e8f0;">Empfohlen:</strong> Tier 1 (4 Tools, ~550€) + Tier 2 (2 Tools, ~170€) = ~720€/Monat = der optimale Start-Stack</span>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- GO-TO-MARKET & RISIKOANALYSE -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">XIV. Go-to-Market &amp; Risikomanagement</h2>
+  <p class="section-sub">Der Realitäts-Check: So rollen wir das aus – inklusive Fallback-Plan</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;">
+    <!-- Timeline -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:14px;">📅 6-Monats-Fahrplan</h3>
+      <div style="font-size:.85rem;color:#cbd5e1;line-height:2.2;">
+        <span style="color:#60a5fa;">Monat 1</span> – Tools buchen (~720€), 2–3 Pilotkunden auswählen<br>
+        <span style="color:#60a5fa;">Monat 2</span> – Onboarding Piloten, erster Regelmonat läuft<br>
+        <span style="color:#60a5fa;">Monat 3–4</span> – Erste Reports, Kunden-Feedback einholen, Prozess nachjustieren<br>
+        <span style="color:#60a5fa;">Monat 5</span> – Go/No-Go-Entscheidung durch Agentur-Leitung<br>
+        <span style="color:#60a5fa;">Monat 6</span> – Rollout auf 5–10 Kunden, Vertriebsmaterial finalisieren
+      </div>
+    </div>
+    <!-- Skill Matrix -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.95rem;color:#60a5fa;margin-bottom:14px;">👥 Wer macht was?</h3>
+      <table class="costs-table" style="margin:0;">
+        <thead><tr><th>Rolle</th><th>Tools</th><th>Anteil</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SEO-Senior</strong></td><td>Ahrefs, Sistrix, GSC</td><td>40%</td></tr>
+          <tr><td><strong>Content-Redakteur</strong></td><td>Claude, SurferSEO</td><td>35%</td></tr>
+          <tr><td><strong>Projektmanager</strong></td><td>Kundenkommunikation</td><td>15%</td></tr>
+          <tr><td><strong>GEO-Spezialist</strong></td><td>Claude, Perplexity</td><td>10%</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.78rem;color:#64748b;margin-top:8px;">Bei Urlaub/Krankheit: Externer Freelancer-Pool als Fallback für Spitzenlasten.</p>
+    </div>
+  </div>
+
+  <!-- Risiko-Matrix -->
+  <h3 style="font-size:.95rem;color:#fbbf24;margin:20px 0 12px;">⚠️ Risiko-Matrix</h3>
+  <table class="costs-table">
+    <thead><tr><th>Risiko</th><th>Wahrscheinlichkeit</th><th>Gegenmaßnahme</th></tr></thead>
+    <tbody>
+      <tr><td>Google stuft KI-Content ab</td><td>Mittel</td><td>SurferSEO + menschlicher Feinschliff als Qualitätspuffer; nie reiner KI-Output</td></tr>
+      <tr><td>Personalmangel (Krankheit/Kündigung)</td><td>Hoch</td><td>2-Personen-Mindestbesetzung; dokumentierte Prozesse; Freelancer-Netzwerk</td></tr>
+      <tr><td>Kunde kündigt vor Mindestlaufzeit</td><td>Niedrig</td><td>Vertraglich 3 Monate bindend; Setup-Pauschale deckt initialen Aufwand</td></tr>
+      <tr><td>Tool-Preissteigerungen</td><td>Mittel</td><td>Alternativ-Tools definiert (Semrush, NeuronWriter); Preisgleitklausel im Kundenvertrag</td></tr>
+      <tr><td>Wettbewerber kopieren SEO+GEO-Modell</td><td>Hoch (6–12 Monate)</td><td>First-Mover-Vorteil nutzen; Kunden durch Qualität binden; GEO-IP aufbauen</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ====================================================================== -->
+  <!-- GEO-ROADMAP -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">XV. GEO-Roadmap 2027 – Zukunftssicherung</h2>
+  <p class="section-sub">Das Konzept ist auf Juni 2026 ausgelegt – so bleibt es in 12 Monaten relevant</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:24px 0;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#60a5fa;margin-bottom:8px;">📡 Citation Tracking</h3>
+      <p style="font-size:.82rem;color:#94a3b8;">Aufbau eines Monitoring-Systems, das erfasst, ob und wie die Kunden-Marke in ChatGPT, Perplexity &amp; AI Overviews zitiert wird. KPI: „KI-Sichtbarkeitsindex".</p>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#60a5fa;margin-bottom:8px;">🧱 Structured Data Exzellenz</h3>
+      <p style="font-size:.82rem;color:#94a3b8;">Je mehr strukturierte Daten eine Website hat, desto wahrscheinlicher wird sie als Quelle für KI-Systeme genutzt. Ausbau des Schema-Portfolios als langfristiger Burggraben.</p>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#60a5fa;margin-bottom:8px;">🏛️ Brand Authority Metriken</h3>
+      <p style="font-size:.82rem;color:#94a3b8;">Neue KPI-Klasse: Wikipedia-Erwähnungen, Wikidata-Vollständigkeit, wissenschaftliche Zitate. Das sind die Backlinks der KI-Ära.</p>
+    </div>
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;">
+      <h3 style="font-size:.9rem;color:#60a5fa;margin-bottom:8px;">🤖 Agentic Search Readiness</h3>
+      <p style="font-size:.82rem;color:#94a3b8;">Vorbereitung auf Google Agentic Search – KI-Assistenten, die mehrstufig recherchieren. Inhalte für Zero-Click-Szenarien optimieren.</p>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- WETTBEWERBSVERGLEICH -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">XVI. Preisvergleich – was kostet SEO am Markt?</h2>
+  <p class="section-sub">Unser Angebot im Wettbewerbsumfeld 2026</p>
+
+  <table class="costs-table">
+    <thead>
+      <tr>
+        <th>Anbieter-Typ</th>
+        <th>Leistungsumfang</th>
+        <th>Preis / Monat</th>
+        <th>SEO</th>
+        <th>GEO</th>
+        <th>KI-Tools</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Freelancer / Low-Budget</td>
+        <td>5–10 Keywords, Basis-OnPage, kein Reporting</td>
+        <td class="paid">300–800 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Klassische SEO-Agentur</td>
+        <td>20–50 Keywords, Audit, Reporting, 1 Call/Monat</td>
+        <td class="paid">1.500–3.000 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Premium SEO-Agentur</td>
+        <td>Content-Produktion, Technik, Backlinks, Strategie-Call</td>
+        <td class="paid">3.000–8.000 €</td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>KI-Content-Agentur (neu)</td>
+        <td>Nur KI-generierte Artikel, kein SEO-Daten-Fundament</td>
+        <td class="paid">500–2.000 €</td>
+        <td class="pkg-col"><span class="no">✗</span></td>
+        <td class="pkg-col"><span style="color:#fbbf24;">(Content)</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+      <tr class="total-row" style="background:rgba(96,165,250,.06);">
+        <td><strong>Unser Angebot (Bronze–Gold)</strong></td>
+        <td><strong>SEO + GEO + KI-Tools aus einer Hand</strong></td>
+        <td><strong style="color:#22c55e;">590–4.500 €</strong></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+        <td class="pkg-col"><span class="yes">✓</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="text-align:center;color:#64748b;font-size:.82rem;">
+    <strong style="color:#60a5fa;">Unser Marktvorteil:</strong> Kein anderer Anbieter kombiniert systematisch klassische SEO-Tools (Ahrefs/Sistrix) mit KI-gestützter GEO-Optimierung (Claude/Perplexity). Die meisten Agenturen machen <em>entweder</em> das eine oder experimentieren mit dem anderen. Wir bieten beides integriert – für weniger Geld als eine reine SEO-Standard-Agentur.
+  </p>
+
+  <!-- ====================================================================== -->
+  <!-- TOOL-RANKING & ALTERNATIVEN -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">XVII. Tool-Ranking: Must-have bis Nice-to-have</h2>
+  <p class="section-sub">Priorisiert nach Use Case – mit Alternativen für jeden Bereich</p>
+
+  <!-- TIER 1: Must-have -->
+  <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:20px;margin:20px 0;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <span style="background:#22c55e;color:#0f172a;font-weight:700;font-size:.7rem;padding:2px 10px;border-radius:999px;">TIER 1</span>
+      <strong style="color:#22c55e;font-size:1rem;">Must-have – ohne diese Tools läuft nichts</strong>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <span style="font-size:1.2rem;">🔍</span>
+          <strong style="color:#e2e8f0;">SEO-Suite</strong>
+          <span style="font-size:.65rem;background:#22c55e;color:#0f172a;padding:1px 6px;border-radius:4px;">Priorität 1</span>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-bottom:8px;">Site-Audit, Keyword-Recherche, Backlinks, Rank-Tracking, Content-Gap</p>
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#22c55e;">★ Ahrefs</strong> (250–500€) – Bester Allrounder, größte Backlink-DB<br>
+          <span style="color:#94a3b8;">↳ Semrush</span> (130€) – Schwächer bei Backlinks, stärker bei PPC-Daten<br>
+          <span style="color:#94a3b8;">↳ Moz Pro</span> (100€) – Gute DA/PA-Metrik, sonst Nachteil gegenüber Ahrefs
+        </div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <span style="font-size:1.2rem;">📊</span>
+          <strong style="color:#e2e8f0;">Sichtbarkeit &amp; SERP</strong>
+          <span style="font-size:.65rem;background:#22c55e;color:#0f172a;padding:1px 6px;border-radius:4px;">Priorität 1</span>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-bottom:8px;">Sichtbarkeitsindex, SERP-Feature-Tracking, Wettbewerbs-Monitoring</p>
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#22c55e;">★ Sistrix</strong> (200–350€) – Bester Sichtbarkeitsindex, DACH-Fokus<br>
+          <span style="color:#94a3b8;">↳ Searchmetrics</span> (400€) – Enterprise, internationaler<br>
+          <span style="color:#94a3b8;">↳ Seobility</span> (kostenloser Plan) – Einstieg, schwächer bei Daten
+        </div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <span style="font-size:1.2rem;">🤖</span>
+          <strong style="color:#e2e8f0;">KI-Analyse &amp; Content</strong>
+          <span style="font-size:.65rem;background:#22c55e;color:#0f172a;padding:1px 6px;border-radius:4px;">Priorität 1</span>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-bottom:8px;">Entity-Extraktion, Content-Briefings, Schema, GEO-Analyse, Report-Texte</p>
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#22c55e;">★ Claude (Anthropic)</strong> (100–300€ API) – Beste Analyse-Qualität, Entity-Verständnis<br>
+          <span style="color:#94a3b8;">↳ ChatGPT (o1)</span> (20€) – Schneller, schwächer bei Deep-Analyse<br>
+          <span style="color:#94a3b8;">↳ Google Gemini</span> – Gut für Google-Integration, schwächer bei reinem Text
+        </div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <span style="font-size:1.2rem;">⚡</span>
+          <strong style="color:#e2e8f0;">Google Search Console</strong>
+          <span style="font-size:.65rem;background:#22c55e;color:#0f172a;padding:1px 6px;border-radius:4px;">Priorität 1</span>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-bottom:8px;">Traffic-Daten, CWV (LCP/INP/CLS), Indexierung, Crawling – alternativlos</p>
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#22c55e;">★ Google Search Console</strong> (0€) – Pflicht für jede Website<br>
+          <span style="color:#64748b;">Keine Alternative – direkteste Google-Datenquelle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIER 2: Core -->
+  <div style="background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);border-radius:14px;padding:20px;margin:20px 0;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <span style="background:#60a5fa;color:#0f172a;font-weight:700;font-size:.7rem;padding:2px 10px;border-radius:999px;">TIER 2</span>
+      <strong style="color:#60a5fa;font-size:1rem;">Core – für Silber &amp; Gold, steigert die Qualität massiv</strong>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <span style="font-size:1.2rem;">📝</span>
+          <strong style="color:#e2e8f0;">Content-Optimierung</strong>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-bottom:8px;">NLP-Scoring, Keyword-Dichte, Content-Briefings, Struktur-Vorgaben</p>
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#60a5fa;">★ SurferSEO</strong> (150–250€) – Branchenstandard, beste NLP-Daten<br>
+          <span style="color:#94a3b8;">↳ NeuronWriter</span> (23€) – Sehr gute Budget-Alternative, 80% der Funktion<br>
+          <span style="color:#94a3b8;">↳ Frase.io</span> (45€) – Gutes Briefing, schwächere NLP-Daten
+        </div>
+      </div>
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+          <span style="font-size:1.2rem;">🌐</span>
+          <strong style="color:#e2e8f0;">Deep-Research</strong>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-bottom:8px;">Wettbewerbsanalyse, Trend-Scouting, Quellen-Recherche für GEO-PR</p>
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#60a5fa;">★ Perplexity Pro</strong> (20€) – Beste Quellenangaben, ideal für Content-Recherche<br>
+          <span style="color:#94a3b8;">↳ ChatGPT Search</span> (20€) – Gut für Echtzeit, weniger Quellen-Transparenz<br>
+          <span style="color:#94a3b8;">↳ You.com</span> – Vergleichbar, kleineres Ökosystem
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIER 3: Nice-to-have -->
+  <div style="background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:14px;padding:20px;margin:20px 0 8px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <span style="background:#fbbf24;color:#0f172a;font-weight:700;font-size:.7rem;padding:2px 10px;border-radius:999px;">TIER 3</span>
+      <strong style="color:#fbbf24;font-size:1rem;">Nice-to-have – optionale Upgrades je nach Kundenprojekt</strong>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+      <div style="background:#0f172a;border-radius:10px;padding:16px;">
+        <div style="font-size:.8rem;line-height:1.8;">
+          <strong style="color:#fbbf24;">Screaming Frog</strong> – Technischer Crawler (0€ bis 500 URLs). Unverzichtbar für Gold/Enterprise, Bronze verzichtbar.<br>
+          <strong style="color:#fbbf24;">Looker Studio</strong> (0€) – Visuelle Dashboards fürs Reporting. Ersetzt manuelle PDFs.<br>
+          <strong style="color:#fbbf24;">AnswerThePublic</strong> – Keyword-Ideen aus Google Auto-Suggest. Gut für Content-Planung.<br>
+          <strong style="color:#fbbf24;">Google Trends</strong> (0€) – Saisonale Trends erkennen. Hilfreich für Content-Timing.<br>
+          <strong style="color:#fbbf24;">Lumar (Deepcrawl)</strong> – Enterprise-Crawling für 10.000+ URLs. Nur für große Gold-Kunden.<br>
+          <strong style="color:#fbbf24;">DeepSeek API</strong> – Preiswerteste KI-API für Massen-Content. Ersatz für ChatGPT bei Budget-Druck.<br>
+          <strong style="color:#fbbf24;">MarketMuse</strong> (150€) – Enterprise Content-Strategie. Wenn Content-Volumen >50 Artikel/Monat.<br>
+          <strong style="color:#fbbf24;">Ryte</strong> – Website-Qualität &amp; DSGVO-Compliance. Relevant für regulierte Branchen.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:16px 0 24px;">
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:5px 18px;font-size:.8rem;color:#94a3b8;">💡 <strong style="color:#e2e8f0;">Empfohlen:</strong> Tier 1 (4 Tools, ~570€) + Tier 2 (2 Tools, ~170€) = ~740€/Monat = der optimale Start-Stack</span>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- GLOSSAR -->
+  <!-- ====================================================================== -->
+  <h2 class="section-title">XVIII. Glossar – alle Fachbegriffe einfach erklärt</h2>
+  <p class="section-sub">Damit du jeden Begriff aus dem Pitch erklären kannst – ohne ins Schwimmen zu geraten</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:14px;margin:24px 0;">
+
+    <!-- SEO & Rankings -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;">
+      <div style="font-size:.78rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">🔍 SEO &amp; Rankings</div>
+      <div style="font-size:.82rem;color:#cbd5e1;line-height:1.9;">
+        <strong style="color:#60a5fa;">SEO</strong> – Maßnahmen, um bei Google weiter oben zu erscheinen<br>
+        <strong style="color:#60a5fa;">SERP</strong> – Die Ergebnisseite nach einer Google-Suche<br>
+        <strong style="color:#60a5fa;">Sichtbarkeitsindex</strong> – Sistrix-Zahl: wie oft eine Website in den Ergebnissen auftaucht<br>
+        <strong style="color:#60a5fa;">Ranking</strong> – Position (1,2,3...) für ein Suchwort<br>
+        <strong style="color:#60a5fa;">CTR</strong> – Klickrate: Wie viele klicken auf ein Ergebnis<br>
+        <strong style="color:#60a5fa;">KPI</strong> – Messbare Erfolgskennzahl (z.B. "+20% Traffic")
+      </div>
+    </div>
+
+    <!-- GEO & Knowledge Graph -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;">
+      <div style="font-size:.78rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">🧠 GEO &amp; Knowledge Graph</div>
+      <div style="font-size:.82rem;color:#cbd5e1;line-height:1.9;">
+        <strong style="color:#60a5fa;">GEO</strong> – SEO für KI-Suchmaschinen (ChatGPT, AI Overviews)<br>
+        <strong style="color:#60a5fa;">Knowledge Graph (KG)</strong> – Googles digitale Wissensdatenbank<br>
+        <strong style="color:#60a5fa;">Knowledge Panel</strong> – Die Info-Box rechts in den Suchergebnissen<br>
+        <strong style="color:#60a5fa;">Entity</strong> – Ein "Ding" im KG (Person, Firma, Produkt, Ort)<br>
+        <strong style="color:#60a5fa;">AI Overview / SGE</strong> – Googles KI-generierte Antwortbox<br>
+        <strong style="color:#60a5fa;">Featured Snippet</strong> – Hervorgehobene Antwort-Box ("Position 0")
+      </div>
+    </div>
+
+    <!-- Technisches SEO -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;">
+      <div style="font-size:.78rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">⚡ Technisches SEO</div>
+      <div style="font-size:.82rem;color:#cbd5e1;line-height:1.9;">
+        <strong style="color:#60a5fa;">Schema Markup / JSON-LD</strong> – Code, der Google Inhalte erklärt<br>
+        <strong style="color:#60a5fa;">Core Web Vitals (CWV)</strong> – Googles 3 Ladezeit-Metriken<br>
+        <strong style="color:#60a5fa;">LCP</strong> – Ladezeit des größten Elements (&lt;2,5 Sek.)<br>
+        <strong style="color:#60a5fa;">INP</strong> – Reaktionszeit auf Klicks (&lt;200 ms)<br>
+        <strong style="color:#60a5fa;">CLS</strong> – Misst "herumspringende" Inhalte (&lt;0,1)<br>
+        <strong style="color:#60a5fa;">Crawl-Budget</strong> – Wie viele Seiten Google pro Tag besucht
+      </div>
+    </div>
+
+    <!-- Content & KI -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;">
+      <div style="font-size:.78rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">📝 Content &amp; KI-Tools</div>
+      <div style="font-size:.82rem;color:#cbd5e1;line-height:1.9;">
+        <strong style="color:#60a5fa;">NLP</strong> – Computer-Verarbeitung von Sprache (SurferSEO)<br>
+        <strong style="color:#60a5fa;">LSI-Keywords</strong> – Verwandte Begriffe (Auto → Motor, Reifen)<br>
+        <strong style="color:#60a5fa;">Content-Gap</strong> – Lücke zwischen Website &amp; Such-Nachfrage<br>
+        <strong style="color:#60a5fa;">Pillar Content / Longform</strong> – Fundament-Artikel (2.000+ Wörter)<br>
+        <strong style="color:#60a5fa;">Structured Data</strong> – Oberbegriff für Schema/JSON-LD<br>
+        <strong style="color:#60a5fa;">Redirect</strong> – Weiterleitung einer URL auf eine andere
+      </div>
+    </div>
+
+    <!-- Linkbuilding -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;">
+      <div style="font-size:.78rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">🔗 Linkbuilding &amp; Authority</div>
+      <div style="font-size:.82rem;color:#cbd5e1;line-height:1.9;">
+        <strong style="color:#60a5fa;">Backlink</strong> – Link von anderer Website auf deine<br>
+        <strong style="color:#60a5fa;">Backlink-Profil</strong> – Gesamtheit aller Backlinks einer Website<br>
+        <strong style="color:#60a5fa;">Domain-Rating (DR)</strong> – Ahrefs-Skala 0-100: "Stärke" einer Domain<br>
+        <strong style="color:#60a5fa;">Toxische Links</strong> – Spam-Backlinks, die dem Ranking schaden<br>
+        <strong style="color:#60a5fa;">Wikidata / DBpedia</strong> – Freie Datenbanken für den Knowledge Graph<br>
+        <strong style="color:#60a5fa;">Hreflang</strong> – Signal für Sprachversionen einer Seite
+      </div>
+    </div>
+
+    <!-- Business -->
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:18px;">
+      <div style="font-size:.78rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">💼 Business-Begriffe</div>
+      <div style="font-size:.82rem;color:#cbd5e1;line-height:1.9;">
+        <strong style="color:#60a5fa;">MRR</strong> – Monatlich wiederkehrende Einnahmen (Retainer)<br>
+        <strong style="color:#60a5fa;">Retainer</strong> – Monatlicher Pauschalbetrag für Dienstleistungen<br>
+        <strong style="color:#60a5fa;">VZÄ</strong> – Vollzeitäquivalent (1 VZÄ = ~167h/Monat)<br>
+        <strong style="color:#60a5fa;">ROI</strong> – Return on Investment: "Lohnt sich das?"<br>
+        <strong style="color:#60a5fa;">Break-even</strong> – Punkt, ab dem Einnahmen die Kosten decken<br>
+        <strong style="color:#60a5fa;">Setup-Pauschale</strong> – Einmalige Gebühr für Kunden-Onboarding
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:12px;">
+    <span style="background:#1e293b;border:1px solid #334155;border-radius:999px;padding:4px 16px;font-size:.78rem;color:#94a3b8;">💡 Die komplette Glossar-Liste findest du auch als separate Übersicht – zum Ausdrucken und Lernen.</span>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- FOOTER -->
+  <!-- ====================================================================== -->
+  <div class="footer-note">
+    <strong style="font-size:1.1rem;color:#e2e8f0;">Nächster Schritt: Pilot-Kunde identifizieren</strong><br>
+    Mit einem bestehenden Kunden als Pilot starten → Prozess validieren → ausrollen.<br><br>
+    Konzeptvorlage · Alle Preise zzgl. MwSt. · Individuell anpassbar je nach Kundenprojekt<br>
+    <span style="color:#475569;">Stand: Juni 2026</span>
+  </div>
+
+</div>
+
+<script>
+  // Tab switching for detail views
+  document.querySelectorAll('.pkg-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.pkg-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.pkg-detail').forEach(d => d.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.pkg).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

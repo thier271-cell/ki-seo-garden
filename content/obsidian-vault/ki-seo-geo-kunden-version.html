@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO + GEO Optimierung – Ihr Weg zu mehr Sichtbarkeit</title>
+<style>
+  :root {
+    --surface:   #ffffff;
+    --text:      #1d1d1f;
+    --text2:     #6e6e73;
+    --text3:     #aeaeb2;
+    --accent:    #5e5ce6;
+    --green:     #30d158;
+    --amber:     #ff9f0a;
+    --blue:      #007aff;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+    --border:    rgba(0,0,0,0.06);
+    --radius:    20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #e8e8ed;
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    text-align: center; padding: 64px 0 44px;
+    background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(94,92,230,0.04) 0%, transparent 70%);
+  }
+  header h1 {
+    font-size: 2.4rem; font-weight: 700; letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #5e5ce6 0%, #007aff 50%, #30d158 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  header p { color: var(--text2); font-size: 1.05rem; margin-top: 10px; max-width: 620px; margin-left: auto; margin-right: auto; }
+
+  .section-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.3px; text-align: center; margin: 56px 0 6px; color: var(--text); }
+  .section-sub { text-align: center; color: var(--text2); font-size: .92rem; margin-bottom: 28px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm);
+  }
+  .card h3 { font-size: .95rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+  .card p, .card li { font-size: .86rem; color: var(--text2); line-height: 1.7; }
+  .card ul { list-style: none; }
+  .card ul li { padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; }
+  .card ul li::before { content: "▸"; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  .pkg {
+    background: var(--surface); border-radius: var(--radius); padding: 0;
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: var(--shadow-md); border: 1px solid var(--border);
+  }
+  .pkg.featured { transform: scale(1.03); box-shadow: 0 0 0 2px var(--accent), 0 12px 48px rgba(94,92,230,0.15); position: relative; z-index: 2; }
+  .pkg .ph { padding: 28px 28px 20px; text-align: center; position: relative; }
+  .pkg.bronze .ph { background: linear-gradient(180deg, rgba(255,159,10,0.06) 0%, transparent 100%); border-bottom: 1px solid rgba(255,159,10,0.12); }
+  .pkg.silber .ph { background: linear-gradient(180deg, rgba(94,92,230,0.06) 0%, transparent 100%); border-bottom: 1px solid rgba(94,92,230,0.12); }
+  .pkg.gold .ph { background: linear-gradient(180deg, rgba(29,29,31,0.03) 0%, transparent 100%); border-bottom: 1px solid var(--border); }
+  .pkg .ph .tag {
+    position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; font-size: .65rem; font-weight: 700;
+    padding: 3px 14px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .pkg .ph h2 { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+  .pkg.bronze .ph h2 { color: #bf7500; }
+  .pkg.silber .ph h2 { color: var(--accent); }
+  .pkg .ph .desc { font-size: .78rem; color: var(--text2); margin-top: 2px; }
+  .pkg .ph .price { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.5px; margin-top: 10px; color: var(--text); }
+  .pkg .ph .price small { font-size: .85rem; font-weight: 400; color: var(--text3); }
+  .pkg .pb { padding: 16px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+  .pkg .pb ul { list-style: none; flex: 1; }
+  .pkg .pb ul li { font-size: .82rem; color: var(--text2); padding: 6px 0; display: flex; align-items: flex-start; gap: 10px; line-height: 1.4; }
+  .pkg .pb ul li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+  .pkg.bronze .pb ul li::before { background: var(--amber); }
+  .pkg.silber .pb ul li::before { background: var(--accent); }
+  .pkg.gold .pb ul li::before { background: var(--text); }
+  .pkg .pb .result-box {
+    margin-top: 14px; padding: 12px;
+    background: rgba(48,209,88,0.04); border: 1px solid rgba(48,209,88,0.12);
+    border-radius: 10px; text-align: center; font-size: .82rem;
+  }
+
+  .cta-box {
+    background: var(--surface); border: 1.5px solid var(--accent);
+    border-radius: var(--radius); padding: 36px 32px; text-align: center; margin: 48px 0;
+    box-shadow: 0 0 0 1px rgba(94,92,230,0.1), 0 12px 40px rgba(94,92,230,0.1);
+  }
+  .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .cta-box p { font-size: .9rem; color: var(--text2); margin-bottom: 20px; }
+
+  .footer-note { text-align: center; padding: 40px 0 50px; color: var(--text3); font-size: .8rem; }
+
+  table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  table th {
+    background: #f9f9fb; padding: 13px 18px; text-align: left;
+    font-size: .72rem; font-weight: 600; color: var(--text2);
+    text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 18px; background: var(--surface);
+    border-top: 1px solid rgba(0,0,0,0.03); font-size: .84rem; color: var(--text);
+  }
+
+  /* Process */
+  .proc { display: flex; gap: 0; align-items: stretch; }
+  .proc .ps {
+    flex: 1; min-width: 140px; max-width: 190px;
+    background: var(--surface); border: 1px solid var(--border);
+    text-align: center; padding: 22px 14px; box-shadow: var(--shadow-sm);
+  }
+  .proc .ps:first-child { border-radius: 14px 0 0 14px; }
+  .proc .ps:last-child { border-radius: 0 14px 14px 0; }
+  .proc .ps .pnum {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px; font-weight: 700; font-size: .8rem;
+  }
+  .proc .ps:last-child .pnum { background: var(--green); }
+  .proc .ps h4 { font-size: .88rem; font-weight: 600; color: var(--text); }
+  .proc .ps p { font-size: .74rem; color: var(--text2); margin-top: 6px; line-height: 1.4; }
+  .proc .arr { display: flex; align-items: center; padding: 0 3px; color: var(--text3); font-size: 1.1rem; flex-shrink: 0; }
+
+  .btn-primary {
+    background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 999px;
+    font-weight: 700; font-size: .9rem; text-decoration: none; display: inline-block;
+  }
+  .btn-secondary {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    padding: 12px 28px; border-radius: 999px; font-weight: 600; font-size: .9rem;
+    text-decoration: none; display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mehr Sichtbarkeit für Ihre Website –<br>mit SEO + KI-Unterstützung</h1>
+  <p>Wir machen Ihre Website nicht nur bei Google sichtbar, sondern auch in den neuen KI-Suchmaschinen wie ChatGPT und Perplexity. Verständlich erklärt – ohne Fachchinesisch.</p>
+</header>
+
+<div class="container">
+
+  <!-- ===== PROBLEM & LÖSUNG ===== -->
+  <h2 class="section-title">Warum reicht eine normale Website heute nicht mehr aus?</h2>
+  <p class="section-sub">Die Art, wie Menschen im Internet suchen, hat sich komplett verändert</p>
+
+  <div class="grid-2" style="margin:24px 0;">
+    <div class="card">
+      <h3>📉 So war es früher</h3>
+      <ul>
+        <li>Sie geben bei Google ein Suchwort ein</li>
+        <li>Google zeigt 10 blaue Links</li>
+        <li>Der Nutzer klickt sich durch die Ergebnisse</li>
+        <li>Wer oben steht, gewinnt</li>
+      </ul>
+    </div>
+    <div class="card" style="border:1.5px solid var(--accent);">
+      <h3>📈 So ist es heute (2026)</h3>
+      <ul>
+        <li>Google zeigt <strong>KI-generierte Antworten</strong> ganz oben</li>
+        <li>ChatGPT &amp; Perplexity ersetzen die Google-Suche für Millionen Nutzer</li>
+        <li>Google blendet <strong>Info-Boxen, Karten, Bewertungen</strong> ein</li>
+        <li>Nur in den blauen Links zu stehen, <strong>reicht nicht mehr</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== WAS WIR MACHEN ===== -->
+  <h2 class="section-title">Was wir für Sie tun</h2>
+  <p class="section-sub">Zwei Dinge, die zusammenwirken – einfach erklärt</p>
+
+  <div class="grid-2" style="margin:24px 0;">
+    <div class="card">
+      <h3>🔍 SEO – klassische Suchmaschinen-Optimierung</h3>
+      <p style="color:var(--text2);">Damit Ihre Website bei Google <strong>weiter oben</strong> in den normalen Suchergebnissen erscheint. Wir kümmern uns um:</p>
+      <ul style="margin-top:12px;">
+        <li>Die richtigen Suchbegriffe finden und einbauen</li>
+        <li>Ihre Website technisch fit machen</li>
+        <li>Gute Inhalte erstellen, die Google und Ihre Kunden mögen</li>
+        <li>Vertrauen bei Google aufbauen (durch Links von anderen Websites)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🧠 GEO – Optimierung für die KI-Suche</h3>
+      <p style="color:var(--text2);">Damit Ihre Website auch in <strong>KI-gestützten Suchergebnissen</strong> auftaucht – also in ChatGPT, Google AI Overviews und den Info-Boxen rechts bei Google. Wir kümmern uns um:</p>
+      <ul style="margin-top:12px;">
+        <li>Ihre Firma für Googles Wissensdatenbank (Knowledge Graph) registrieren</li>
+        <li>Strukturierte Daten einbauen, die KI-Systeme verstehen</li>
+        <li>Inhalte so aufbereiten, dass sie als Quelle für KI-Antworten dienen</li>
+        <li>Ihre Marke in allen modernen Suchoberflächen sichtbar machen</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== PAKETE ===== -->
+  <h2 class="section-title">Unsere Leistungspakete</h2>
+  <p class="section-sub">Monatliche Betreuung – transparent, messbar, ohne versteckte Kosten</p>
+
+  <div class="grid-3" style="margin:24px 0;align-items:stretch;">
+
+    <!-- Bronze -->
+    <div class="pkg bronze">
+      <div class="ph">
+        <h2>Bronze</h2>
+        <div class="desc">Für den Einstieg – erste Optimierungen mit sichtbarem Effekt</div>
+        <div class="price">590<small> €</small></div>
+        <div style="font-size:.74rem;color:var(--text3);margin-top:4px;">pro Monat</div>
+      </div>
+      <div class="pb">
+        <ul>
+          <li>Analyse Ihrer Website (was läuft gut, was nicht)</li>
+          <li>5 wichtige Seiten optimieren</li>
+          <li>Ihre Firma in Googles Wissensdatenbank prüfen</li>
+          <li>Zwischenstand Mitte des Monats per E-Mail</li>
+          <li>1-Seiten-Bericht am Monatsende</li>
+        </ul>
+        <div class="result-box">
+          <strong style="color:var(--green);">Ergebnis nach 3 Monaten:</strong><br>
+          <span style="color:var(--text2);">+15–25% mehr Sichtbarkeit bei Google</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Silber -->
+    <div class="pkg silber featured">
+      <div class="ph">
+        <div class="tag">Am beliebtesten</div>
+        <h2>Silber</h2>
+        <div class="desc">Für spürbares Wachstum – Strategie + Umsetzung</div>
+        <div class="price">1.490<small> €</small></div>
+        <div style="font-size:.74rem;color:var(--text3);margin-top:4px;">pro Monat</div>
+      </div>
+      <div class="pb">
+        <ul>
+          <li>Alles aus Bronze</li>
+          <li>Tiefen-Analyse: was macht die Konkurrenz besser?</li>
+          <li>15 Seiten optimieren – inklusive detaillierter Anleitungen</li>
+          <li>Strukturierte Daten für bessere Google-Ergebnisse</li>
+          <li>Ausführlicher Monatsbericht mit konkreten Ergebnissen</li>
+          <li>30 Minuten persönliches Gespräch pro Monat</li>
+        </ul>
+        <div class="result-box">
+          <strong style="color:var(--green);">Ergebnis nach 3 Monaten:</strong><br>
+          <span style="color:var(--text2);">+30–50% mehr Besucher · 5–10 hervorgehobene Google-Ergebnisse</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold -->
+    <div class="pkg gold">
+      <div class="ph">
+        <h2>Gold</h2>
+        <div class="desc">Rundum-Service – wir kümmern uns um alles</div>
+        <div class="price">4.500<small> €</small></div>
+        <div style="font-size:.74rem;color:var(--text3);margin-top:4px;">pro Monat</div>
+      </div>
+      <div class="pb">
+        <ul>
+          <li>Alles aus Silber</li>
+          <li>4–8 neue Fachartikel pro Monat (von uns geschrieben)</li>
+          <li>Ihre Marke in Wikipedia-ähnlichen Datenbanken eintragen</li>
+          <li>Technische Optimierung inklusive Ladezeit-Verbesserung</li>
+          <li>Wöchentliche Updates + 2 Stunden persönliches Gespräch</li>
+        </ul>
+        <div class="result-box">
+          <strong style="color:var(--green);">Ergebnis nach 3 Monaten:</strong><br>
+          <span style="color:var(--text2);">+40–70% mehr Besucher · Google-Info-Box wird aufgebaut</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== WAS BEKOMMEN SIE? ===== -->
+  <h2 class="section-title">Was bekommen Sie jeden Monat von uns?</h2>
+  <p class="section-sub">Transparente Zusammenarbeit mit klaren Ergebnissen</p>
+
+  <div class="grid-3" style="margin:24px 0;">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">📊</div>
+      <h3>Monatsbericht</h3>
+      <p>Ein verständlicher Report, der zeigt: Wie hat sich Ihre Sichtbarkeit entwickelt? Welche Begriffe bringen Besucher? Was haben wir diesen Monat erreicht?</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">🔧</div>
+      <h3>Umsetzung</h3>
+      <p>Wir optimieren Ihre Seiten, schreiben Inhalte und kümmern uns um die Technik. Sie müssen nichts selbst machen – wir setzen alles direkt um.</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:2rem;margin-bottom:8px;">📞</div>
+      <h3>Persönlicher Ansprechpartner</h3>
+      <p>Ein fester Kontakt, der Ihre Website und Ihre Branche kennt. Regelmäßige Gespräche, in denen wir Ergebnisse und nächste Schritte besprechen.</p>
+    </div>
+  </div>
+
+  <!-- ===== PROZESS ===== -->
+  <h2 class="section-title">So läuft die Zusammenarbeit ab</h2>
+  <p class="section-sub">Vom ersten Gespräch bis zum ersten sichtbaren Ergebnis</p>
+
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;margin:24px 0 40px;">
+    <div class="proc">
+      <div class="ps"><div class="pnum">1</div><h4>Kennenlernen</h4><p>Wir besprechen Ihre Ziele und schauen uns Ihre Website an – unverbindlich.</p></div>
+      <div class="arr">▸</div>
+      <div class="ps"><div class="pnum">2</div><h4>Analyse</h4><p>Wir prüfen Ihre Website auf Herz und Nieren – Technik, Inhalte, Sichtbarkeit.</p></div>
+      <div class="arr">▸</div>
+      <div class="ps"><div class="pnum">3</div><h4>Optimierung</h4><p>Monat für Monat setzen wir Verbesserungen um und bauen Ihre Sichtbarkeit auf.</p></div>
+      <div class="arr">▸</div>
+      <div class="ps"><div class="pnum" style="background:var(--green);">✓</div><h4>Erfolg messen</h4><p>Jeden Monat sehen Sie in Ihrem Bericht, wie sich Ihre Zahlen verbessern.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== ERGEBNIS-TIMELINE ===== -->
+  <h2 class="section-title">Wann sehen Sie erste Ergebnisse?</h2>
+  <p class="section-sub">SEO braucht Zeit – aber Sie sehen jeden Monat Fortschritte</p>
+
+  <table style="margin:24px 0;">
+    <thead><tr><th>Zeitraum</th><th>Was passiert</th><th>Was Sie merken</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Monat 1</strong></td><td>Analyse Ihrer Website, erste Optimierungen starten</td><td>Sie erhalten einen ausführlichen Analyse-Bericht</td></tr>
+      <tr><td><strong>Monat 2</strong></td><td>Inhalte werden verbessert, technische Probleme behoben</td><td>Erste Verbesserungen in den Google-Rankings sichtbar</td></tr>
+      <tr><td><strong>Monat 3</strong></td><td>Ihre optimierten Seiten gewinnen an Sichtbarkeit</td><td>Messbar mehr Besucher über Google, erste KI-Erwähnungen</td></tr>
+      <tr><td><strong>Monat 4–6</strong></td><td>Ihre Website etabliert sich – auch in KI-Suchmaschinen</td><td>Deutlich mehr Anfragen, neue Kunden über organische Suche</td></tr>
+      <tr><td><strong>Ab Monat 7</strong></td><td>Kontinuierliche Optimierung und Ausbau</td><td>SEO wird zu Ihrer stärksten und günstigsten Kundenquelle</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== KLEINES GLOSSAR ===== -->
+  <h2 class="section-title">Kleines Wörterbuch – Fachbegriffe einfach erklärt</h2>
+  <p class="section-sub">Damit Sie jeden Begriff verstehen, den wir verwenden</p>
+
+  <div class="grid-2" style="margin:24px 0;">
+    <div class="card">
+      <h3>SEO</h3>
+      <p>Search Engine Optimization = Maßnahmen, damit Ihre Website bei Google weiter oben erscheint. Je höher Sie ranken, desto mehr Besucher bekommen Sie – ohne Werbung zu bezahlen.</p>
+    </div>
+    <div class="card">
+      <h3>GEO (Generative Engine Optimization)</h3>
+      <p>Die "neue SEO" für KI-Suchmaschinen. Sorgt dafür, dass Ihre Website auch in ChatGPT, Google AI Overviews und den Info-Boxen bei Google auftaucht.</p>
+    </div>
+    <div class="card">
+      <h3>Knowledge Graph / Knowledge Panel</h3>
+      <p>Googles digitale Wissensdatenbank. Wenn Ihre Firma dort eingetragen ist, erscheint rechts bei Google-Suchen eine Info-Box mit Logo, Adresse und Bewertungen.</p>
+    </div>
+    <div class="card">
+      <h3>Featured Snippet</h3>
+      <p>Eine hervorgehobene Antwort-Box ganz oben in den Google-Ergebnissen. Besonders wertvoll, weil sie noch vor den normalen Links erscheint.</p>
+    </div>
+    <div class="card">
+      <h3>Schema Markup</h3>
+      <p>Unsichtbarer Code auf Ihrer Website, der Google und KI-Systemen erklärt, was Ihre Inhalte bedeuten. Sorgt für bessere Darstellung in den Suchergebnissen (z.B. mit Sternen).</p>
+    </div>
+    <div class="card">
+      <h3>Content-Gap-Analyse</h3>
+      <p>Wir vergleichen Ihre Website mit der Konkurrenz und finden heraus: Welche Themen fehlen bei Ihnen? Was suchen Ihre potenziellen Kunden, das Sie noch nicht anbieten?</p>
+    </div>
+  </div>
+
+  <!-- ===== HÄUFIGE FRAGEN ===== -->
+  <h2 class="section-title">Häufige Fragen unserer Kunden</h2>
+
+  <div style="display:flex;flex-direction:column;gap:10px;margin:24px 0;">
+    <div class="card">
+      <h3>„Muss ich dafür technisch etwas können?"</h3>
+      <p>Nein. Wir setzen alle Änderungen direkt um. Sie brauchen nur Zugang zu Ihrer Website zu geben – den Rest machen wir.</p>
+    </div>
+    <div class="card">
+      <h3>„Wie lange dauert es, bis ich Ergebnisse sehe?"</h3>
+      <p>Erste messbare Verbesserungen sehen Sie nach etwa 2–3 Monaten. SEO ist ein langfristiger Kanal – aber einer, der sich mit der Zeit immer mehr auszahlt (weil Sie keine Klick-Kosten pro Besucher zahlen, anders als bei Google Ads).</p>
+    </div>
+    <div class="card">
+      <h3>„Kann ich jederzeit kündigen?"</h3>
+      <p>Die Mindestlaufzeit beträgt 3 Monate – das ist nötig, damit SEO wirken kann. Danach monatlich kündbar.</p>
+    </div>
+    <div class="card">
+      <h3>„Was ist, wenn ich schon eine andere Agentur habe?"</h3>
+      <p>Wir übernehmen bestehende Projekte nahtlos. Wir analysieren, was bereits gemacht wurde, und bauen darauf auf – nichts geht verloren.</p>
+    </div>
+    <div class="card">
+      <h3>„Arbeiten Sie mit meinem Homepage-Baukasten (Wix, Jimdo, WordPress etc.)?"</h3>
+      <p>Ja. Wir arbeiten mit allen gängigen Systemen. Manche sind einfacher zu optimieren als andere – wir sagen Ihnen ehrlich, was mit Ihrem System möglich ist.</p>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-box">
+    <h3>Bereit für mehr Sichtbarkeit?</h3>
+    <p>Vereinbaren Sie ein unverbindliches Erstgespräch. Wir analysieren Ihre Website, geben eine erste Einschätzung und empfehlen das passende Paket – kostenlos und ohne Verpflichtung.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <span class="btn-primary">📞 Jetzt Erstgespräch vereinbaren</span>
+      <span class="btn-secondary">📧 Per E-Mail anfragen</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <strong>SEO + GEO Optimierung</strong> – 10+ Jahre Erfahrung. Wir arbeiten mit modernsten KI-Tools (Claude, Perplexity) und klassischer SEO-Expertise (Ahrefs, Sistrix).<br>
+    Alle Preise zzgl. MwSt. · Mindestlaufzeit 3 Monate, danach monatlich kündbar.<br>
+    <span style="color:var(--text3);">Stand: Juni 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>
